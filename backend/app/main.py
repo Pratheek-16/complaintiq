@@ -17,10 +17,11 @@ app = FastAPI(
     openapi_url="/api/openapi.json"
 )
 
-# CORS configuration
+# CORS configuration - supports Vercel domains, local dev, and custom origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS if settings.CORS_ORIGINS else ["*"],
+    allow_origins=settings.CORS_ORIGINS if settings.CORS_ORIGINS and "*" not in settings.CORS_ORIGINS else [],
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
