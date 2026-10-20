@@ -1,0 +1,361 @@
+complaint_id,complaint_text,category,received_date,product,company,location,department,severity,status
+SYN-0001,The item arrived broken and the packaging was torn.,Damaged Product,2026-04-25,Clothing,ShopSphere,Vijayawada,Quality,High,Resolved
+SYN-0002,My payment was deducted but the order was never confirmed.,Payment Failure,2026-04-30,Books,ShopSphere,Vijayawada,Payments,High,Resolved
+SYN-0003,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-05-23,Electronics,Northstar Retail,Chennai,Quality,Medium,In Progress
+SYN-0004,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-07-14,Electronics,QuickCart,Bengaluru,Finance,High,Open
+SYN-0005,The item arrived broken and the packaging was torn.,Damaged Product,2026-10-10,Home & Kitchen,QuickCart,Vijayawada,Quality,High,Resolved
+SYN-0006,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-04-30,Electronics,UrbanBasket,Bengaluru,Finance,High,Resolved
+SYN-0007,The transaction appears two times on my bank statement.,Duplicate Payment,2026-04-18,Grocery,QuickCart,Visakhapatnam,Payments,High,Resolved
+SYN-0008,I received a damaged product and need a replacement.,Damaged Product,2026-05-19,Grocery,Northstar Retail,Bengaluru,Quality,High,Open
+SYN-0009,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-02-03,Clothing,QuickCart,Hyderabad,Payments,High,In Progress
+SYN-0010,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-03-13,Clothing,QuickCart,Vijayawada,Customer Service,Low,Resolved
+SYN-0011,The checkout page failed after my bank approved the payment.,Payment Failure,2026-09-10,Electronics,ShopSphere,Visakhapatnam,Payments,High,Resolved
+SYN-0012,Why is my refund taking so long? I have contacted support 5 times.,Refund Delay,2026-07-15,Books,UrbanBasket,Vijayawada,Finance,High,Resolved
+SYN-0013,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-05-17,Grocery,QuickCart,Visakhapatnam,Customer Service,Low,In Progress
+SYN-0014,I returned my order but my refund has not arrived after 10 days.,Refund Delay,2026-04-02,Books,ShopSphere,Bengaluru,Finance,Medium,Open
+SYN-0015,The checkout page failed after my bank approved the payment.,Payment Failure,2026-06-15,Beauty,ShopSphere,Visakhapatnam,Payments,Medium,In Progress
+SYN-0016,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-09-06,Electronics,Northstar Retail,Hyderabad,Finance,High,Resolved
+SYN-0017,Why is my refund taking so long? I have contacted support 6 times.,Refund Delay,2026-04-13,Grocery,QuickCart,Chennai,Finance,High,In Progress
+SYN-0018,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-04-26,Electronics,QuickCart,Visakhapatnam,Customer Service,Medium,Resolved
+SYN-0019,I returned my order but my refund has not arrived after 3 days.,Refund Delay,2026-02-04,Electronics,QuickCart,Visakhapatnam,Finance,Medium,In Progress
+SYN-0020,I received a damaged product and need a replacement.,Damaged Product,2026-08-31,Clothing,UrbanBasket,Chennai,Quality,High,Open
+SYN-0021,Why is my refund taking so long? I have contacted support 5 times.,Refund Delay,2026-07-30,Beauty,ShopSphere,Visakhapatnam,Finance,Medium,In Progress
+SYN-0022,The item arrived broken and the packaging was torn.,Damaged Product,2026-04-08,Books,UrbanBasket,Hyderabad,Quality,Medium,Open
+SYN-0023,The checkout page failed after my bank approved the payment.,Payment Failure,2026-10-09,Electronics,ShopSphere,Vijayawada,Payments,High,Open
+SYN-0024,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-09-06,Beauty,Northstar Retail,Chennai,Customer Service,Medium,Open
+SYN-0025,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-05-27,Beauty,UrbanBasket,Hyderabad,Payments,High,In Progress
+SYN-0026,I returned my order but my refund has not arrived after 3 days.,Refund Delay,2026-01-30,Electronics,UrbanBasket,Vijayawada,Finance,Medium,Open
+SYN-0027,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-02-04,Grocery,Northstar Retail,Chennai,Customer Service,Medium,Resolved
+SYN-0028,I returned my order but my refund has not arrived after 4 days.,Refund Delay,2026-10-17,Books,QuickCart,Bengaluru,Finance,Medium,Resolved
+SYN-0029,I received a damaged product and need a replacement.,Damaged Product,2026-03-09,Grocery,QuickCart,Chennai,Quality,Medium,Open
+SYN-0030,I returned my order but my refund has not arrived after 4 days.,Refund Delay,2026-04-20,Books,QuickCart,Hyderabad,Finance,High,Open
+SYN-0031,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-13,Books,QuickCart,Vijayawada,Customer Service,Medium,Resolved
+SYN-0032,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-05-16,Electronics,ShopSphere,Vijayawada,Payments,High,In Progress
+SYN-0033,The checkout page failed after my bank approved the payment.,Payment Failure,2026-05-16,Books,UrbanBasket,Bengaluru,Payments,High,Open
+SYN-0034,The product has a crack and does not work properly out of the box.,Damaged Product,2026-06-20,Clothing,QuickCart,Hyderabad,Quality,Medium,Resolved
+SYN-0035,The item arrived broken and the packaging was torn.,Damaged Product,2026-03-18,Books,ShopSphere,Bengaluru,Quality,High,In Progress
+SYN-0036,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-07-03,Clothing,Northstar Retail,Visakhapatnam,Finance,High,Resolved
+SYN-0037,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-03-25,Clothing,UrbanBasket,Visakhapatnam,Customer Service,Medium,Resolved
+SYN-0038,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-03-23,Grocery,ShopSphere,Chennai,Customer Service,Medium,In Progress
+SYN-0039,Why is my refund taking so long? I have contacted support 4 times.,Refund Delay,2026-04-27,Clothing,ShopSphere,Hyderabad,Finance,High,In Progress
+SYN-0040,My payment was deducted but the order was never confirmed.,Payment Failure,2026-09-18,Beauty,QuickCart,Visakhapatnam,Payments,High,In Progress
+SYN-0041,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-08-11,Home & Kitchen,QuickCart,Chennai,Finance,Medium,In Progress
+SYN-0042,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-08-12,Electronics,Northstar Retail,Bengaluru,Customer Service,Low,Open
+SYN-0043,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-06-03,Books,QuickCart,Chennai,Customer Service,Low,In Progress
+SYN-0044,I received a damaged product and need a replacement.,Damaged Product,2026-07-14,Grocery,Northstar Retail,Vijayawada,Quality,Medium,In Progress
+SYN-0045,My package is 11 days late and the tracking page has not changed.,Delivery Delay,2026-04-18,Beauty,QuickCart,Chennai,Logistics,Low,In Progress
+SYN-0046,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-05-26,Books,QuickCart,Visakhapatnam,Quality,High,Resolved
+SYN-0047,The checkout page failed after my bank approved the payment.,Payment Failure,2026-01-24,Clothing,UrbanBasket,Vijayawada,Payments,High,In Progress
+SYN-0048,The checkout page failed after my bank approved the payment.,Payment Failure,2026-07-24,Clothing,Northstar Retail,Visakhapatnam,Payments,High,In Progress
+SYN-0049,Why is my refund taking so long? I have contacted support 6 times.,Refund Delay,2026-05-08,Electronics,UrbanBasket,Hyderabad,Finance,High,Resolved
+SYN-0050,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-09-16,Beauty,UrbanBasket,Hyderabad,Logistics,Low,In Progress
+SYN-0051,The checkout page failed after my bank approved the payment.,Payment Failure,2026-09-06,Grocery,Northstar Retail,Bengaluru,Payments,Medium,Open
+SYN-0052,I received a damaged product and need a replacement.,Damaged Product,2026-06-13,Books,ShopSphere,Hyderabad,Quality,High,Open
+SYN-0053,The checkout page failed after my bank approved the payment.,Payment Failure,2026-08-01,Beauty,QuickCart,Vijayawada,Payments,Medium,In Progress
+SYN-0054,Why is my refund taking so long? I have contacted support 6 times.,Refund Delay,2026-01-11,Books,UrbanBasket,Chennai,Finance,Medium,In Progress
+SYN-0055,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-10-07,Books,Northstar Retail,Chennai,Payments,High,In Progress
+SYN-0056,My payment was deducted but the order was never confirmed.,Payment Failure,2026-07-27,Grocery,Northstar Retail,Chennai,Payments,High,Resolved
+SYN-0057,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-08-08,Clothing,UrbanBasket,Hyderabad,Logistics,Medium,In Progress
+SYN-0058,The checkout page failed after my bank approved the payment.,Payment Failure,2026-06-22,Beauty,QuickCart,Chennai,Payments,Medium,Open
+SYN-0059,My package is 13 days late and the tracking page has not changed.,Delivery Delay,2026-02-05,Grocery,ShopSphere,Visakhapatnam,Logistics,Medium,Open
+SYN-0060,The transaction appears two times on my bank statement.,Duplicate Payment,2026-08-31,Grocery,ShopSphere,Vijayawada,Payments,High,In Progress
+SYN-0061,The product has a crack and does not work properly out of the box.,Damaged Product,2026-02-28,Clothing,QuickCart,Visakhapatnam,Quality,High,In Progress
+SYN-0062,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-02-08,Books,Northstar Retail,Visakhapatnam,Logistics,Low,Resolved
+SYN-0063,My package is 3 days late and the tracking page has not changed.,Delivery Delay,2026-09-30,Beauty,QuickCart,Visakhapatnam,Logistics,Low,Open
+SYN-0064,I see a duplicate charge for a single transaction.,Duplicate Payment,2026-07-05,Grocery,UrbanBasket,Hyderabad,Payments,High,Open
+SYN-0065,The product has a crack and does not work properly out of the box.,Damaged Product,2026-08-12,Grocery,QuickCart,Bengaluru,Quality,High,Open
+SYN-0066,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-10-19,Books,UrbanBasket,Bengaluru,Payments,High,In Progress
+SYN-0067,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-07-01,Home & Kitchen,QuickCart,Bengaluru,Customer Service,Low,Resolved
+SYN-0068,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-07-28,Beauty,Northstar Retail,Chennai,Finance,High,In Progress
+SYN-0069,I was charged twice for one order.,Duplicate Payment,2026-07-27,Grocery,Northstar Retail,Bengaluru,Payments,High,In Progress
+SYN-0070,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-06-19,Home & Kitchen,UrbanBasket,Bengaluru,Logistics,Low,In Progress
+SYN-0071,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-10-02,Grocery,Northstar Retail,Hyderabad,Finance,Medium,Resolved
+SYN-0072,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-06-01,Clothing,QuickCart,Hyderabad,Logistics,Low,Open
+SYN-0073,I received a damaged product and need a replacement.,Damaged Product,2026-01-28,Books,QuickCart,Hyderabad,Quality,Medium,Open
+SYN-0074,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-14,Home & Kitchen,Northstar Retail,Visakhapatnam,Customer Service,Low,In Progress
+SYN-0075,I returned my order but my refund has not arrived after 14 days.,Refund Delay,2026-02-07,Books,ShopSphere,Hyderabad,Finance,Medium,Resolved
+SYN-0076,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-10-13,Beauty,Northstar Retail,Vijayawada,Customer Service,Low,In Progress
+SYN-0077,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-10-19,Books,ShopSphere,Vijayawada,Customer Service,Medium,Open
+SYN-0078,The product has a crack and does not work properly out of the box.,Damaged Product,2026-05-03,Clothing,ShopSphere,Hyderabad,Quality,High,In Progress
+SYN-0079,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-04-29,Home & Kitchen,QuickCart,Chennai,Logistics,Medium,Resolved
+SYN-0080,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-02-28,Books,Northstar Retail,Hyderabad,Finance,High,Open
+SYN-0081,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-10-19,Home & Kitchen,UrbanBasket,Visakhapatnam,Finance,High,Resolved
+SYN-0082,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-10-04,Beauty,UrbanBasket,Visakhapatnam,Payments,High,In Progress
+SYN-0083,The product has a crack and does not work properly out of the box.,Damaged Product,2026-04-28,Grocery,ShopSphere,Bengaluru,Quality,High,Open
+SYN-0084,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-08-12,Grocery,UrbanBasket,Visakhapatnam,Logistics,Low,In Progress
+SYN-0085,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-06-18,Beauty,UrbanBasket,Bengaluru,Payments,Medium,Resolved
+SYN-0086,I returned my order but my refund has not arrived after 12 days.,Refund Delay,2026-06-15,Electronics,UrbanBasket,Vijayawada,Finance,Medium,Resolved
+SYN-0087,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-04-07,Books,QuickCart,Vijayawada,Customer Service,Low,Resolved
+SYN-0088,My package is 8 days late and the tracking page has not changed.,Delivery Delay,2026-10-09,Clothing,QuickCart,Chennai,Logistics,Low,Open
+SYN-0089,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-10-10,Electronics,UrbanBasket,Visakhapatnam,Finance,Medium,Open
+SYN-0090,My package is 6 days late and the tracking page has not changed.,Delivery Delay,2026-05-30,Books,QuickCart,Chennai,Logistics,Low,In Progress
+SYN-0091,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-09-18,Grocery,Northstar Retail,Visakhapatnam,Finance,High,In Progress
+SYN-0092,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-06-02,Books,UrbanBasket,Hyderabad,Payments,Medium,Resolved
+SYN-0093,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-06-14,Clothing,Northstar Retail,Vijayawada,Logistics,Low,Open
+SYN-0094,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-08-31,Grocery,UrbanBasket,Chennai,Customer Service,Medium,In Progress
+SYN-0095,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-06-19,Electronics,UrbanBasket,Visakhapatnam,Customer Service,Low,Open
+SYN-0096,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-08-29,Home & Kitchen,QuickCart,Vijayawada,Quality,Medium,Resolved
+SYN-0097,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-09-07,Books,ShopSphere,Vijayawada,Finance,Medium,Open
+SYN-0098,The product has a crack and does not work properly out of the box.,Damaged Product,2026-08-11,Electronics,ShopSphere,Chennai,Quality,High,Resolved
+SYN-0099,My payment was deducted but the order was never confirmed.,Payment Failure,2026-01-29,Home & Kitchen,QuickCart,Bengaluru,Payments,Medium,Open
+SYN-0100,Why is my refund taking so long? I have contacted support 3 times.,Refund Delay,2026-03-31,Electronics,UrbanBasket,Vijayawada,Finance,Medium,In Progress
+SYN-0101,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-05-11,Beauty,QuickCart,Visakhapatnam,Customer Service,Low,In Progress
+SYN-0102,I received a damaged product and need a replacement.,Damaged Product,2026-06-26,Books,QuickCart,Chennai,Quality,Medium,In Progress
+SYN-0103,The transaction appears two times on my bank statement.,Duplicate Payment,2026-02-24,Clothing,UrbanBasket,Vijayawada,Payments,High,Resolved
+SYN-0104,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-05-21,Electronics,ShopSphere,Vijayawada,Payments,Medium,In Progress
+SYN-0105,The transaction appears two times on my bank statement.,Duplicate Payment,2026-04-08,Books,QuickCart,Hyderabad,Payments,High,Resolved
+SYN-0106,The product has a crack and does not work properly out of the box.,Damaged Product,2026-07-06,Grocery,Northstar Retail,Visakhapatnam,Quality,Medium,In Progress
+SYN-0107,I received a damaged product and need a replacement.,Damaged Product,2026-10-04,Home & Kitchen,QuickCart,Hyderabad,Quality,Medium,In Progress
+SYN-0108,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-28,Electronics,Northstar Retail,Hyderabad,Customer Service,Low,Resolved
+SYN-0109,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-10-02,Electronics,UrbanBasket,Bengaluru,Payments,Medium,Resolved
+SYN-0110,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-08-30,Electronics,QuickCart,Vijayawada,Payments,High,Resolved
+SYN-0111,Why is my refund taking so long? I have contacted support 5 times.,Refund Delay,2026-03-01,Clothing,ShopSphere,Visakhapatnam,Finance,High,In Progress
+SYN-0112,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-08-21,Home & Kitchen,UrbanBasket,Vijayawada,Finance,Medium,In Progress
+SYN-0113,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-01-17,Grocery,QuickCart,Hyderabad,Quality,Medium,In Progress
+SYN-0114,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-10-06,Grocery,QuickCart,Visakhapatnam,Customer Service,Low,In Progress
+SYN-0115,I returned my order but my refund has not arrived after 16 days.,Refund Delay,2026-04-19,Grocery,ShopSphere,Visakhapatnam,Finance,High,Open
+SYN-0116,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-04-17,Books,Northstar Retail,Hyderabad,Customer Service,Low,Open
+SYN-0117,I was charged twice for one order.,Duplicate Payment,2026-03-08,Books,QuickCart,Hyderabad,Payments,High,Resolved
+SYN-0118,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-05-02,Books,QuickCart,Visakhapatnam,Customer Service,Medium,In Progress
+SYN-0119,Why is my refund taking so long? I have contacted support 2 times.,Refund Delay,2026-02-02,Beauty,UrbanBasket,Bengaluru,Finance,Medium,In Progress
+SYN-0120,My package is 18 days late and the tracking page has not changed.,Delivery Delay,2026-08-23,Grocery,ShopSphere,Visakhapatnam,Logistics,Low,In Progress
+SYN-0121,My payment was deducted but the order was never confirmed.,Payment Failure,2026-02-07,Electronics,QuickCart,Vijayawada,Payments,High,Open
+SYN-0122,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-09-29,Home & Kitchen,UrbanBasket,Vijayawada,Finance,High,Open
+SYN-0123,I was charged twice for one order.,Duplicate Payment,2026-08-20,Clothing,UrbanBasket,Bengaluru,Payments,High,In Progress
+SYN-0124,My payment was deducted but the order was never confirmed.,Payment Failure,2026-06-10,Grocery,QuickCart,Bengaluru,Payments,High,Resolved
+SYN-0125,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-02-17,Beauty,ShopSphere,Bengaluru,Customer Service,Medium,Resolved
+SYN-0126,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-07-01,Grocery,UrbanBasket,Visakhapatnam,Finance,High,Resolved
+SYN-0127,My payment was deducted but the order was never confirmed.,Payment Failure,2026-03-21,Grocery,UrbanBasket,Hyderabad,Payments,High,In Progress
+SYN-0128,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-04-26,Beauty,ShopSphere,Vijayawada,Payments,High,Open
+SYN-0129,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-01-04,Clothing,Northstar Retail,Vijayawada,Finance,High,Open
+SYN-0130,I returned my order but my refund has not arrived after 4 days.,Refund Delay,2026-04-21,Beauty,UrbanBasket,Chennai,Finance,High,Open
+SYN-0131,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-03-21,Clothing,ShopSphere,Visakhapatnam,Payments,Medium,In Progress
+SYN-0132,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-05-20,Clothing,ShopSphere,Bengaluru,Quality,Medium,Open
+SYN-0133,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-01-24,Clothing,UrbanBasket,Vijayawada,Payments,High,Open
+SYN-0134,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-05-29,Home & Kitchen,ShopSphere,Visakhapatnam,Finance,High,Resolved
+SYN-0135,The checkout page failed after my bank approved the payment.,Payment Failure,2026-04-28,Books,QuickCart,Visakhapatnam,Payments,Medium,Resolved
+SYN-0136,I returned my order but my refund has not arrived after 16 days.,Refund Delay,2026-06-10,Books,UrbanBasket,Vijayawada,Finance,High,Resolved
+SYN-0137,The product has a crack and does not work properly out of the box.,Damaged Product,2026-01-11,Home & Kitchen,Northstar Retail,Vijayawada,Quality,Medium,Resolved
+SYN-0138,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-05-05,Beauty,UrbanBasket,Vijayawada,Customer Service,Medium,In Progress
+SYN-0139,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-03-28,Electronics,ShopSphere,Vijayawada,Customer Service,Medium,In Progress
+SYN-0140,The checkout page failed after my bank approved the payment.,Payment Failure,2026-03-16,Home & Kitchen,Northstar Retail,Hyderabad,Payments,High,Resolved
+SYN-0141,Why is my refund taking so long? I have contacted support 6 times.,Refund Delay,2026-08-18,Grocery,QuickCart,Bengaluru,Finance,Medium,In Progress
+SYN-0142,Why is my refund taking so long? I have contacted support 4 times.,Refund Delay,2026-01-29,Home & Kitchen,ShopSphere,Bengaluru,Finance,High,In Progress
+SYN-0143,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-02-16,Books,UrbanBasket,Chennai,Finance,Medium,In Progress
+SYN-0144,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-09-01,Books,Northstar Retail,Visakhapatnam,Customer Service,Low,Open
+SYN-0145,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-03-30,Electronics,Northstar Retail,Chennai,Payments,High,Resolved
+SYN-0146,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-05-25,Beauty,UrbanBasket,Bengaluru,Logistics,Medium,Resolved
+SYN-0147,The item arrived broken and the packaging was torn.,Damaged Product,2026-10-13,Grocery,UrbanBasket,Bengaluru,Quality,Medium,Resolved
+SYN-0148,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-03-14,Home & Kitchen,QuickCart,Chennai,Customer Service,Medium,Resolved
+SYN-0149,The item arrived broken and the packaging was torn.,Damaged Product,2026-07-12,Grocery,QuickCart,Hyderabad,Quality,High,Resolved
+SYN-0150,The product has a crack and does not work properly out of the box.,Damaged Product,2026-06-08,Clothing,Northstar Retail,Bengaluru,Quality,Medium,Open
+SYN-0151,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-06-01,Electronics,ShopSphere,Bengaluru,Finance,Medium,Resolved
+SYN-0152,The checkout page failed after my bank approved the payment.,Payment Failure,2026-03-26,Grocery,UrbanBasket,Visakhapatnam,Payments,Medium,In Progress
+SYN-0153,I received a damaged product and need a replacement.,Damaged Product,2026-05-26,Grocery,UrbanBasket,Hyderabad,Quality,High,In Progress
+SYN-0154,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-10-20,Beauty,UrbanBasket,Bengaluru,Customer Service,Low,Resolved
+SYN-0155,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-03-12,Home & Kitchen,ShopSphere,Chennai,Logistics,Low,Resolved
+SYN-0156,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-03-24,Home & Kitchen,UrbanBasket,Vijayawada,Customer Service,Medium,In Progress
+SYN-0157,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-01-14,Beauty,ShopSphere,Chennai,Finance,High,Open
+SYN-0158,My payment was deducted but the order was never confirmed.,Payment Failure,2026-01-15,Home & Kitchen,ShopSphere,Bengaluru,Payments,High,Open
+SYN-0159,Why is my refund taking so long? I have contacted support 5 times.,Refund Delay,2026-08-18,Books,ShopSphere,Visakhapatnam,Finance,Medium,In Progress
+SYN-0160,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-02-26,Home & Kitchen,Northstar Retail,Bengaluru,Finance,Medium,Open
+SYN-0161,Why is my refund taking so long? I have contacted support 2 times.,Refund Delay,2026-09-13,Books,ShopSphere,Vijayawada,Finance,Medium,Resolved
+SYN-0162,Why is my refund taking so long? I have contacted support 6 times.,Refund Delay,2026-06-30,Clothing,UrbanBasket,Hyderabad,Finance,Medium,Resolved
+SYN-0163,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-09-17,Books,ShopSphere,Chennai,Customer Service,Low,Open
+SYN-0164,The product has a crack and does not work properly out of the box.,Damaged Product,2026-07-02,Electronics,QuickCart,Hyderabad,Quality,High,Resolved
+SYN-0165,The product has a crack and does not work properly out of the box.,Damaged Product,2026-06-30,Books,QuickCart,Hyderabad,Quality,Medium,Resolved
+SYN-0166,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-08-23,Electronics,QuickCart,Hyderabad,Logistics,Medium,Open
+SYN-0167,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-07-23,Books,UrbanBasket,Bengaluru,Customer Service,Medium,Resolved
+SYN-0168,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-05-20,Electronics,QuickCart,Chennai,Finance,High,Resolved
+SYN-0169,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-09-12,Grocery,UrbanBasket,Bengaluru,Payments,Medium,Open
+SYN-0170,The item arrived broken and the packaging was torn.,Damaged Product,2026-04-03,Books,QuickCart,Bengaluru,Quality,High,Open
+SYN-0171,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-08-07,Clothing,UrbanBasket,Bengaluru,Payments,Medium,Open
+SYN-0172,The product has a crack and does not work properly out of the box.,Damaged Product,2026-01-30,Electronics,UrbanBasket,Bengaluru,Quality,High,Open
+SYN-0173,Why is my refund taking so long? I have contacted support 3 times.,Refund Delay,2026-02-04,Clothing,QuickCart,Bengaluru,Finance,High,Resolved
+SYN-0174,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-07-10,Beauty,ShopSphere,Vijayawada,Finance,Medium,Resolved
+SYN-0175,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-02-28,Electronics,Northstar Retail,Chennai,Payments,Medium,Resolved
+SYN-0176,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-05-27,Grocery,UrbanBasket,Hyderabad,Finance,Medium,Open
+SYN-0177,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-02-14,Grocery,QuickCart,Bengaluru,Customer Service,Medium,Resolved
+SYN-0178,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-07-05,Books,Northstar Retail,Visakhapatnam,Logistics,Medium,Open
+SYN-0179,Why is my refund taking so long? I have contacted support 4 times.,Refund Delay,2026-10-11,Books,QuickCart,Chennai,Finance,Medium,Resolved
+SYN-0180,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-09-03,Books,UrbanBasket,Chennai,Customer Service,Medium,Open
+SYN-0181,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-09-22,Home & Kitchen,Northstar Retail,Vijayawada,Customer Service,Medium,Open
+SYN-0182,My payment was deducted but the order was never confirmed.,Payment Failure,2026-03-20,Home & Kitchen,Northstar Retail,Hyderabad,Payments,Medium,Resolved
+SYN-0183,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-04-11,Grocery,QuickCart,Hyderabad,Finance,High,Resolved
+SYN-0184,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-06-22,Books,ShopSphere,Visakhapatnam,Logistics,Medium,Open
+SYN-0185,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-02,Books,ShopSphere,Chennai,Customer Service,Low,Resolved
+SYN-0186,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-06-02,Beauty,ShopSphere,Visakhapatnam,Customer Service,Medium,In Progress
+SYN-0187,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-03-15,Home & Kitchen,QuickCart,Bengaluru,Payments,Medium,Open
+SYN-0188,I was charged twice for one order.,Duplicate Payment,2026-08-27,Electronics,QuickCart,Chennai,Payments,High,Open
+SYN-0189,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-08-03,Clothing,Northstar Retail,Bengaluru,Finance,High,Open
+SYN-0190,I see a duplicate charge for a single transaction.,Duplicate Payment,2026-09-13,Home & Kitchen,UrbanBasket,Visakhapatnam,Payments,High,In Progress
+SYN-0191,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-06-30,Electronics,ShopSphere,Bengaluru,Logistics,Low,Resolved
+SYN-0192,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-01-05,Electronics,UrbanBasket,Hyderabad,Customer Service,Low,Resolved
+SYN-0193,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-07-25,Electronics,Northstar Retail,Bengaluru,Payments,Medium,Open
+SYN-0194,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-03-02,Clothing,ShopSphere,Chennai,Payments,Medium,In Progress
+SYN-0195,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-09-18,Beauty,ShopSphere,Visakhapatnam,Logistics,Medium,Open
+SYN-0196,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-03-18,Books,Northstar Retail,Bengaluru,Quality,Medium,Open
+SYN-0197,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-09-18,Books,UrbanBasket,Vijayawada,Payments,Medium,In Progress
+SYN-0198,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-08-02,Books,QuickCart,Visakhapatnam,Payments,High,In Progress
+SYN-0199,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-09-03,Clothing,UrbanBasket,Hyderabad,Customer Service,Medium,Open
+SYN-0200,My package is 8 days late and the tracking page has not changed.,Delivery Delay,2026-08-14,Home & Kitchen,UrbanBasket,Hyderabad,Logistics,Low,Resolved
+SYN-0201,Why is my refund taking so long? I have contacted support 3 times.,Refund Delay,2026-09-23,Clothing,QuickCart,Chennai,Finance,High,In Progress
+SYN-0202,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-07-01,Grocery,QuickCart,Vijayawada,Customer Service,Low,Open
+SYN-0203,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-06-02,Home & Kitchen,Northstar Retail,Chennai,Customer Service,Low,In Progress
+SYN-0204,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-10-06,Beauty,UrbanBasket,Bengaluru,Payments,High,In Progress
+SYN-0205,I returned my order but my refund has not arrived after 13 days.,Refund Delay,2026-05-12,Grocery,UrbanBasket,Hyderabad,Finance,Medium,Resolved
+SYN-0206,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-05-03,Clothing,ShopSphere,Vijayawada,Payments,High,Resolved
+SYN-0207,I returned my order but my refund has not arrived after 15 days.,Refund Delay,2026-08-30,Electronics,Northstar Retail,Visakhapatnam,Finance,Medium,In Progress
+SYN-0208,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-05-28,Home & Kitchen,QuickCart,Visakhapatnam,Quality,High,Resolved
+SYN-0209,My package is 7 days late and the tracking page has not changed.,Delivery Delay,2026-04-01,Electronics,UrbanBasket,Chennai,Logistics,Medium,Resolved
+SYN-0210,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-06-02,Books,ShopSphere,Bengaluru,Customer Service,Low,In Progress
+SYN-0211,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-08-28,Home & Kitchen,Northstar Retail,Visakhapatnam,Customer Service,Low,Open
+SYN-0212,The product has a crack and does not work properly out of the box.,Damaged Product,2026-06-22,Home & Kitchen,Northstar Retail,Hyderabad,Quality,Medium,In Progress
+SYN-0213,My package is 14 days late and the tracking page has not changed.,Delivery Delay,2026-04-05,Clothing,UrbanBasket,Bengaluru,Logistics,Medium,Open
+SYN-0214,The checkout page failed after my bank approved the payment.,Payment Failure,2026-06-18,Home & Kitchen,ShopSphere,Bengaluru,Payments,Medium,Resolved
+SYN-0215,I returned my order but my refund has not arrived after 16 days.,Refund Delay,2026-03-23,Beauty,QuickCart,Visakhapatnam,Finance,High,In Progress
+SYN-0216,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-03-20,Beauty,QuickCart,Chennai,Logistics,Low,Resolved
+SYN-0217,The transaction appears two times on my bank statement.,Duplicate Payment,2026-02-11,Books,UrbanBasket,Vijayawada,Payments,High,Open
+SYN-0218,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-09-16,Clothing,Northstar Retail,Hyderabad,Customer Service,Low,Resolved
+SYN-0219,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-09-19,Beauty,ShopSphere,Chennai,Logistics,Medium,Resolved
+SYN-0220,My payment was deducted but the order was never confirmed.,Payment Failure,2026-01-12,Beauty,QuickCart,Visakhapatnam,Payments,High,Resolved
+SYN-0221,Why is my refund taking so long? I have contacted support 2 times.,Refund Delay,2026-10-05,Electronics,ShopSphere,Chennai,Finance,Medium,In Progress
+SYN-0222,The checkout page failed after my bank approved the payment.,Payment Failure,2026-07-15,Beauty,UrbanBasket,Chennai,Payments,High,Resolved
+SYN-0223,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-04-02,Books,UrbanBasket,Vijayawada,Customer Service,Medium,Resolved
+SYN-0224,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-08-26,Grocery,UrbanBasket,Vijayawada,Customer Service,Low,Open
+SYN-0225,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-04-07,Grocery,ShopSphere,Visakhapatnam,Finance,High,Resolved
+SYN-0226,I was charged twice for one order.,Duplicate Payment,2026-02-04,Electronics,ShopSphere,Chennai,Payments,High,Open
+SYN-0227,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-10-04,Clothing,ShopSphere,Hyderabad,Quality,Medium,Open
+SYN-0228,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-06-04,Clothing,Northstar Retail,Chennai,Payments,High,In Progress
+SYN-0229,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-09-11,Electronics,QuickCart,Chennai,Finance,High,Resolved
+SYN-0230,The checkout page failed after my bank approved the payment.,Payment Failure,2026-04-05,Books,UrbanBasket,Hyderabad,Payments,High,In Progress
+SYN-0231,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-10-15,Beauty,UrbanBasket,Vijayawada,Customer Service,Medium,In Progress
+SYN-0232,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-08-19,Home & Kitchen,ShopSphere,Vijayawada,Finance,Medium,Open
+SYN-0233,My payment was deducted but the order was never confirmed.,Payment Failure,2026-10-14,Clothing,UrbanBasket,Hyderabad,Payments,Medium,In Progress
+SYN-0234,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-03-02,Grocery,UrbanBasket,Hyderabad,Customer Service,Medium,In Progress
+SYN-0235,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-27,Books,QuickCart,Bengaluru,Customer Service,Low,In Progress
+SYN-0236,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-08-29,Home & Kitchen,Northstar Retail,Bengaluru,Logistics,Low,In Progress
+SYN-0237,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-05-14,Books,UrbanBasket,Bengaluru,Finance,Medium,Open
+SYN-0238,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-10-09,Grocery,QuickCart,Bengaluru,Payments,Medium,Resolved
+SYN-0239,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-06-30,Clothing,Northstar Retail,Vijayawada,Quality,Medium,Open
+SYN-0240,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-02-08,Grocery,ShopSphere,Visakhapatnam,Customer Service,Low,Open
+SYN-0241,The transaction appears two times on my bank statement.,Duplicate Payment,2026-01-05,Clothing,UrbanBasket,Bengaluru,Payments,High,Resolved
+SYN-0242,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-01-04,Books,UrbanBasket,Visakhapatnam,Quality,High,Resolved
+SYN-0243,The product has a crack and does not work properly out of the box.,Damaged Product,2026-08-09,Clothing,ShopSphere,Visakhapatnam,Quality,High,Open
+SYN-0244,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-07-23,Electronics,QuickCart,Chennai,Finance,High,Resolved
+SYN-0245,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-01-17,Electronics,UrbanBasket,Chennai,Finance,High,Resolved
+SYN-0246,My package is 7 days late and the tracking page has not changed.,Delivery Delay,2026-09-13,Beauty,QuickCart,Vijayawada,Logistics,Medium,Resolved
+SYN-0247,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-09-01,Home & Kitchen,ShopSphere,Visakhapatnam,Customer Service,Low,Resolved
+SYN-0248,My package is 7 days late and the tracking page has not changed.,Delivery Delay,2026-01-09,Clothing,Northstar Retail,Chennai,Logistics,Medium,In Progress
+SYN-0249,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-06-19,Beauty,Northstar Retail,Visakhapatnam,Finance,High,Open
+SYN-0250,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-07-23,Home & Kitchen,ShopSphere,Bengaluru,Finance,High,In Progress
+SYN-0251,Why is my refund taking so long? I have contacted support 3 times.,Refund Delay,2026-07-14,Electronics,QuickCart,Hyderabad,Finance,Medium,Open
+SYN-0252,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-06-12,Home & Kitchen,ShopSphere,Visakhapatnam,Payments,High,In Progress
+SYN-0253,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-02-14,Clothing,UrbanBasket,Chennai,Logistics,Low,Open
+SYN-0254,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-06-16,Beauty,ShopSphere,Bengaluru,Finance,High,In Progress
+SYN-0255,The transaction appears two times on my bank statement.,Duplicate Payment,2026-07-14,Clothing,Northstar Retail,Bengaluru,Payments,High,In Progress
+SYN-0256,My package is 7 days late and the tracking page has not changed.,Delivery Delay,2026-05-22,Beauty,QuickCart,Chennai,Logistics,Medium,In Progress
+SYN-0257,The checkout page failed after my bank approved the payment.,Payment Failure,2026-04-11,Beauty,ShopSphere,Hyderabad,Payments,Medium,Open
+SYN-0258,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-08-14,Home & Kitchen,UrbanBasket,Vijayawada,Customer Service,Medium,In Progress
+SYN-0259,The checkout page failed after my bank approved the payment.,Payment Failure,2026-04-01,Beauty,QuickCart,Bengaluru,Payments,Medium,Resolved
+SYN-0260,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-07-21,Home & Kitchen,ShopSphere,Vijayawada,Payments,High,Resolved
+SYN-0261,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-04-18,Beauty,QuickCart,Visakhapatnam,Customer Service,Low,Resolved
+SYN-0262,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-03-20,Grocery,UrbanBasket,Chennai,Logistics,Medium,In Progress
+SYN-0263,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-09-17,Grocery,UrbanBasket,Vijayawada,Customer Service,Medium,In Progress
+SYN-0264,The item arrived broken and the packaging was torn.,Damaged Product,2026-07-01,Clothing,ShopSphere,Vijayawada,Quality,Medium,In Progress
+SYN-0265,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-02-20,Home & Kitchen,Northstar Retail,Vijayawada,Customer Service,Medium,In Progress
+SYN-0266,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-06-26,Electronics,UrbanBasket,Visakhapatnam,Payments,Medium,In Progress
+SYN-0267,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-06-28,Home & Kitchen,QuickCart,Chennai,Customer Service,Medium,Resolved
+SYN-0268,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-08-20,Home & Kitchen,ShopSphere,Bengaluru,Logistics,Medium,Resolved
+SYN-0269,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-05-05,Books,Northstar Retail,Vijayawada,Finance,Medium,In Progress
+SYN-0270,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-04-05,Clothing,UrbanBasket,Chennai,Logistics,Medium,Resolved
+SYN-0271,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-08-08,Beauty,ShopSphere,Hyderabad,Logistics,Medium,In Progress
+SYN-0272,I was charged twice for one order.,Duplicate Payment,2026-04-06,Home & Kitchen,QuickCart,Hyderabad,Payments,High,Open
+SYN-0273,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-07-18,Books,UrbanBasket,Vijayawada,Payments,High,In Progress
+SYN-0274,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-02-13,Grocery,Northstar Retail,Bengaluru,Payments,High,Open
+SYN-0275,The checkout page failed after my bank approved the payment.,Payment Failure,2026-09-19,Beauty,UrbanBasket,Vijayawada,Payments,High,Resolved
+SYN-0276,The checkout page failed after my bank approved the payment.,Payment Failure,2026-03-30,Books,Northstar Retail,Chennai,Payments,Medium,Open
+SYN-0277,I was charged twice for one order.,Duplicate Payment,2026-09-06,Clothing,Northstar Retail,Chennai,Payments,High,In Progress
+SYN-0278,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-03-27,Electronics,ShopSphere,Hyderabad,Quality,Medium,Open
+SYN-0279,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-10-17,Grocery,UrbanBasket,Vijayawada,Payments,High,Resolved
+SYN-0280,The product has a crack and does not work properly out of the box.,Damaged Product,2026-10-07,Clothing,UrbanBasket,Visakhapatnam,Quality,High,In Progress
+SYN-0281,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-06-28,Electronics,UrbanBasket,Visakhapatnam,Customer Service,Medium,Open
+SYN-0282,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-03-13,Clothing,Northstar Retail,Visakhapatnam,Payments,High,Resolved
+SYN-0283,The checkout page failed after my bank approved the payment.,Payment Failure,2026-05-29,Books,QuickCart,Vijayawada,Payments,High,Open
+SYN-0284,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-03-06,Grocery,Northstar Retail,Hyderabad,Customer Service,Medium,Resolved
+SYN-0285,The checkout page failed after my bank approved the payment.,Payment Failure,2026-03-14,Books,QuickCart,Chennai,Payments,Medium,In Progress
+SYN-0286,The item arrived broken and the packaging was torn.,Damaged Product,2026-05-23,Grocery,QuickCart,Chennai,Quality,Medium,In Progress
+SYN-0287,My package is 16 days late and the tracking page has not changed.,Delivery Delay,2026-02-02,Books,UrbanBasket,Hyderabad,Logistics,Low,Open
+SYN-0288,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-10-08,Books,Northstar Retail,Vijayawada,Logistics,Low,In Progress
+SYN-0289,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-08-24,Electronics,ShopSphere,Hyderabad,Customer Service,Low,In Progress
+SYN-0290,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-03-23,Home & Kitchen,ShopSphere,Bengaluru,Customer Service,Low,Open
+SYN-0291,The checkout page failed after my bank approved the payment.,Payment Failure,2026-06-06,Grocery,Northstar Retail,Chennai,Payments,High,Resolved
+SYN-0292,I returned my order but my refund has not arrived after 6 days.,Refund Delay,2026-10-01,Grocery,UrbanBasket,Visakhapatnam,Finance,Medium,Resolved
+SYN-0293,My payment was deducted but the order was never confirmed.,Payment Failure,2026-09-02,Electronics,Northstar Retail,Chennai,Payments,High,Resolved
+SYN-0294,I was charged twice for one order.,Duplicate Payment,2026-06-03,Clothing,UrbanBasket,Hyderabad,Payments,High,Open
+SYN-0295,My package is 7 days late and the tracking page has not changed.,Delivery Delay,2026-06-29,Grocery,Northstar Retail,Hyderabad,Logistics,Low,Resolved
+SYN-0296,I received a damaged product and need a replacement.,Damaged Product,2026-03-13,Electronics,UrbanBasket,Bengaluru,Quality,Medium,In Progress
+SYN-0297,The transaction appears two times on my bank statement.,Duplicate Payment,2026-05-08,Books,QuickCart,Visakhapatnam,Payments,High,Open
+SYN-0298,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-01-28,Clothing,UrbanBasket,Chennai,Logistics,Medium,Open
+SYN-0299,My package is 18 days late and the tracking page has not changed.,Delivery Delay,2026-07-04,Home & Kitchen,Northstar Retail,Chennai,Logistics,Low,In Progress
+SYN-0300,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-01-09,Books,ShopSphere,Visakhapatnam,Logistics,Low,Open
+SYN-0301,Why is my refund taking so long? I have contacted support 4 times.,Refund Delay,2026-10-09,Beauty,UrbanBasket,Chennai,Finance,Medium,Resolved
+SYN-0302,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-06-08,Electronics,Northstar Retail,Hyderabad,Logistics,Low,In Progress
+SYN-0303,My package is 11 days late and the tracking page has not changed.,Delivery Delay,2026-05-03,Electronics,Northstar Retail,Visakhapatnam,Logistics,Low,Open
+SYN-0304,My package is 11 days late and the tracking page has not changed.,Delivery Delay,2026-03-03,Electronics,Northstar Retail,Visakhapatnam,Logistics,Medium,In Progress
+SYN-0305,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-03-06,Grocery,QuickCart,Visakhapatnam,Customer Service,Medium,In Progress
+SYN-0306,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-05-15,Grocery,ShopSphere,Chennai,Payments,High,Resolved
+SYN-0307,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-03-22,Home & Kitchen,ShopSphere,Vijayawada,Payments,High,Open
+SYN-0308,The item arrived broken and the packaging was torn.,Damaged Product,2026-05-06,Electronics,UrbanBasket,Bengaluru,Quality,Medium,Open
+SYN-0309,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-06-14,Clothing,UrbanBasket,Bengaluru,Customer Service,Low,Open
+SYN-0310,My package is 18 days late and the tracking page has not changed.,Delivery Delay,2026-04-02,Clothing,ShopSphere,Chennai,Logistics,Medium,In Progress
+SYN-0311,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-10-11,Beauty,ShopSphere,Bengaluru,Customer Service,Medium,In Progress
+SYN-0312,The courier keeps postponing delivery without giving a reason.,Delivery Delay,2026-07-08,Books,UrbanBasket,Hyderabad,Logistics,Medium,Open
+SYN-0313,The refund is still pending and customer support has not resolved it.,Refund Delay,2026-09-15,Grocery,UrbanBasket,Bengaluru,Finance,Medium,Open
+SYN-0314,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-01-31,Clothing,QuickCart,Visakhapatnam,Logistics,Medium,Open
+SYN-0315,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-02-13,Books,ShopSphere,Vijayawada,Customer Service,Medium,Resolved
+SYN-0316,I was charged twice for one order.,Duplicate Payment,2026-03-08,Clothing,QuickCart,Bengaluru,Payments,High,In Progress
+SYN-0317,The product has a crack and does not work properly out of the box.,Damaged Product,2026-05-20,Clothing,ShopSphere,Hyderabad,Quality,High,Resolved
+SYN-0318,Why is my refund taking so long? I have contacted support 4 times.,Refund Delay,2026-09-18,Books,QuickCart,Hyderabad,Finance,High,In Progress
+SYN-0319,My package is 4 days late and the tracking page has not changed.,Delivery Delay,2026-06-05,Grocery,ShopSphere,Hyderabad,Logistics,Low,Open
+SYN-0320,"I cancelled my purchase, but the money has not been returned to my account.",Refund Delay,2026-10-06,Home & Kitchen,QuickCart,Hyderabad,Finance,Medium,In Progress
+SYN-0321,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-02-22,Clothing,ShopSphere,Visakhapatnam,Customer Service,Medium,Open
+SYN-0322,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-05-13,Electronics,ShopSphere,Visakhapatnam,Payments,High,Resolved
+SYN-0323,"The delivery date passed, but the parcel has not arrived.",Delivery Delay,2026-03-04,Electronics,UrbanBasket,Visakhapatnam,Logistics,Medium,Resolved
+SYN-0324,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-07-15,Grocery,UrbanBasket,Hyderabad,Payments,Medium,Open
+SYN-0325,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-03-18,Electronics,Northstar Retail,Bengaluru,Customer Service,Low,In Progress
+SYN-0326,Customer service keeps transferring me between teams without a solution.,Poor Customer Support,2026-05-24,Beauty,Northstar Retail,Chennai,Customer Service,Medium,Resolved
+SYN-0327,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-07-03,Beauty,UrbanBasket,Bengaluru,Customer Service,Low,In Progress
+SYN-0328,My payment was deducted but the order was never confirmed.,Payment Failure,2026-04-23,Electronics,QuickCart,Visakhapatnam,Payments,Medium,Resolved
+SYN-0329,The checkout page failed after my bank approved the payment.,Payment Failure,2026-05-07,Grocery,Northstar Retail,Bengaluru,Payments,High,Open
+SYN-0330,My order is stuck in transit and support cannot provide an updated delivery date.,Delivery Delay,2026-04-01,Clothing,QuickCart,Bengaluru,Logistics,Medium,Resolved
+SYN-0331,I received a damaged product and need a replacement.,Damaged Product,2026-10-05,Home & Kitchen,Northstar Retail,Chennai,Quality,High,Open
+SYN-0332,My package is 18 days late and the tracking page has not changed.,Delivery Delay,2026-01-01,Home & Kitchen,Northstar Retail,Hyderabad,Logistics,Low,Resolved
+SYN-0333,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-03-17,Books,Northstar Retail,Visakhapatnam,Payments,High,Open
+SYN-0334,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-06-04,Home & Kitchen,Northstar Retail,Hyderabad,Payments,Medium,Resolved
+SYN-0335,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-07-02,Clothing,Northstar Retail,Chennai,Customer Service,Low,Resolved
+SYN-0336,I received a damaged product and need a replacement.,Damaged Product,2026-07-20,Books,ShopSphere,Hyderabad,Quality,Medium,Resolved
+SYN-0337,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-02-09,Clothing,QuickCart,Bengaluru,Payments,High,Resolved
+SYN-0338,I have contacted customer support several times but nobody has helped me.,Poor Customer Support,2026-01-06,Home & Kitchen,Northstar Retail,Hyderabad,Customer Service,Medium,In Progress
+SYN-0339,My payment was deducted but the order was never confirmed.,Payment Failure,2026-07-17,Beauty,UrbanBasket,Hyderabad,Payments,Medium,In Progress
+SYN-0340,I waited a long time for an agent and received no useful answer.,Poor Customer Support,2026-09-03,Books,Northstar Retail,Hyderabad,Customer Service,Low,Open
+SYN-0341,I was charged twice for one order.,Duplicate Payment,2026-06-13,Home & Kitchen,ShopSphere,Visakhapatnam,Payments,High,Open
+SYN-0342,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-02-17,Home & Kitchen,UrbanBasket,Visakhapatnam,Customer Service,Low,Resolved
+SYN-0343,The support agent closed my ticket without resolving the problem.,Poor Customer Support,2026-06-19,Clothing,Northstar Retail,Chennai,Customer Service,Low,Resolved
+SYN-0344,The checkout page failed after my bank approved the payment.,Payment Failure,2026-07-21,Books,UrbanBasket,Hyderabad,Payments,High,In Progress
+SYN-0345,Why is my refund taking so long? I have contacted support 2 times.,Refund Delay,2026-09-21,Clothing,QuickCart,Visakhapatnam,Finance,High,Open
+SYN-0346,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-05-16,Electronics,UrbanBasket,Hyderabad,Payments,Medium,In Progress
+SYN-0347,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-08-14,Beauty,QuickCart,Hyderabad,Payments,Medium,Resolved
+SYN-0348,The item arrived broken and the packaging was torn.,Damaged Product,2026-10-05,Beauty,Northstar Retail,Vijayawada,Quality,High,In Progress
+SYN-0349,I see a duplicate charge for a single transaction.,Duplicate Payment,2026-05-01,Beauty,QuickCart,Visakhapatnam,Payments,High,Resolved
+SYN-0350,The checkout page failed after my bank approved the payment.,Payment Failure,2026-03-30,Clothing,Northstar Retail,Hyderabad,Payments,High,Open
+SYN-0351,The payment gateway timed out and I cannot tell whether my payment went through.,Payment Failure,2026-05-13,Home & Kitchen,ShopSphere,Visakhapatnam,Payments,Medium,Resolved
+SYN-0352,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-08-23,Electronics,UrbanBasket,Visakhapatnam,Payments,Medium,Open
+SYN-0353,My payment was deducted but the order was never confirmed.,Payment Failure,2026-02-21,Home & Kitchen,QuickCart,Chennai,Payments,Medium,In Progress
+SYN-0354,The parcel was crushed during shipping and the contents are damaged.,Damaged Product,2026-05-22,Beauty,Northstar Retail,Vijayawada,Quality,Medium,Open
+SYN-0355,I was charged but the transaction shows as unsuccessful in the app.,Payment Failure,2026-09-01,Home & Kitchen,QuickCart,Visakhapatnam,Payments,Medium,In Progress
+SYN-0356,The item arrived broken and the packaging was torn.,Damaged Product,2026-03-10,Home & Kitchen,UrbanBasket,Bengaluru,Payments,Medium,Resolved
+SYN-0357,The item arrived broken and the packaging was torn.,Damaged Product,2026-04-19,Beauty,UrbanBasket,Vijayawada,Payments,Medium,Open
+SYN-0358,I see a duplicate charge for a single transaction.,Duplicate Payment,2026-09-17,Beauty,Northstar Retail,Vijayawada,Logistics,Medium,Open
+SYN-0359,The product has a crack and does not work properly out of the box.,Damaged Product,2026-08-22,Electronics,QuickCart,Hyderabad,Payments,High,In Progress
+SYN-0360,"Two payments were taken for the same purchase, but I placed only one order.",Duplicate Payment,2026-05-04,Home & Kitchen,UrbanBasket,Vijayawada,Payments,High,Open
