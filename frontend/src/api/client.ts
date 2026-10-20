@@ -15,8 +15,12 @@ import {
   ValidationReport,
 } from '../types';
 
+const apiBase = import.meta.env.VITE_API_BASE_URL
+  ? `${import.meta.env.VITE_API_BASE_URL}/api/v1`
+  : '/api/v1';
+
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: apiBase,
   headers: {
     'Content-Type': 'application/json',
   },
