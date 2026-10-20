@@ -41,8 +41,17 @@ class MLService:
     _active_model_name: str | None = None
 
     @classmethod
-    def get_candidate_classifiers(cls, random_state: int = 42) -> dict[str, Any]:
-        """Returns initialized candidate classifier instances."""
+    def get_candidate_classifiers(cls, min_class_samples: int = 5, random_state: int = 42) -> dict[str, Any]:
+        """Returns initialized candidate classifier instances with adaptive cross-validation."""
+        cv_folds = min(3, max(2, min_class_samples))
+        if min_class_samples < 2:
+            from sklearn.linear_model import SGDClassifier
+            svm_clf = SGDClassifier(loss="log_loss", penalty="l2", random_state=random_state, max_iter=2000)
+        else:
+            svm_clf = CalibratedClassifierCV(
+                estimator=LinearSVC(C=1.0, random_state=random_state, dual="auto", max_iter=2000),
+                cv=cv_folds
+            )
         return {
             "naive_bayes": MultinomialNB(alpha=0.1),
             "logistic_regression": LogisticRegression(
@@ -52,10 +61,7 @@ class MLService:
                 random_state=random_state,
                 solver="lbfgs"
             ),
-            "linear_svm": CalibratedClassifierCV(
-                estimator=LinearSVC(C=1.0, random_state=random_state, dual="auto", max_iter=2000),
-                cv=3
-            ),
+            "linear_svm": svm_clf,
         }
 
     @classmethod
@@ -90,8 +96,13 @@ class MLService:
         if len(unique_classes) < 2:
             raise ValueError(f"Need at least 2 distinct categories to train a classifier. Found: {unique_classes}")
 
-        # Filter out classes with fewer than 2 examples for stratified split safety
-        valid_indices = [i for i, label in enumerate(labels) if class_counts[np.where(unique_classes == label)[0][0]] >= 2]
+        # Filter out extremely rare classes (fewer than 4 examples) to ensure cross-validation & stratification succeed
+        min_required = 4
+        valid_classes = set(unique_classes[class_counts >= min_required])
+        if len(valid_classes) < 2:
+            valid_classes = set(unique_classes[class_counts >= 2])
+
+        valid_indices = [i for i, label in enumerate(labels) if label in valid_classes]
         if len(valid_indices) < len(labels):
             texts = [texts[i] for i in valid_indices]
             labels = [labels[i] for i in valid_indices]
@@ -106,8 +117,13 @@ class MLService:
             stratify=stratify_arg
         )
 
+        # Count minimum samples per class in training set
+        _, train_class_counts = np.unique(y_train, return_counts=True)
+        min_train_samples = int(np.min(train_class_counts)) if len(train_class_counts) > 0 else 1
+
+        candidate_clfs = cls.get_candidate_classifiers(min_class_samples=min_train_samples)
         models_to_run = (
-            list(cls.get_candidate_classifiers().keys())
+            list(candidate_clfs.keys())
             if train_req.model_name in ["all", "compare"]
             else [train_req.model_name]
         )
@@ -129,7 +145,7 @@ class MLService:
                 stop_words=None # Preprocessor already normalized tokens
             )
 
-            classifier = cls.get_candidate_classifiers()[name]
+            classifier = candidate_clfs[name]
             pipeline = Pipeline([
                 ("tfidf", vectorizer),
                 ("clf", classifier)
