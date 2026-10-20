@@ -151,11 +151,11 @@ export const InvestigationCenter: React.FC = () => {
           subtitle="Cross-tabulate complaint patterns across company, product, and geography"
           actions={
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400 font-semibold">Focus Category:</span>
+              <span className="text-xs text-slate-500 font-semibold">Focus Category:</span>
               <select
                 value={evidenceCategory}
                 onChange={(e) => setEvidenceCategory(e.target.value)}
-                className="text-xs rounded-xl border border-slate-700/80 py-1.5 px-3 bg-slate-900 text-slate-200 font-medium focus:outline-none focus:border-sky-500"
+                className="text-xs rounded-lg border-slate-300 py-1.5 px-3 border bg-white font-medium"
               >
                 <option value="Credit Reporting & Repair">Credit Reporting & Repair</option>
                 <option value="Debt Collection & Harassment">Debt Collection & Harassment</option>
@@ -169,7 +169,7 @@ export const InvestigationCenter: React.FC = () => {
         >
           {loadingEvidence ? (
             <div className="py-12 text-center text-slate-400">
-              <div className="w-6 h-6 border-2 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+              <div className="w-6 h-6 border-3 border-sky-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
               <p className="text-xs">Exploring co-occurrence distributions...</p>
             </div>
           ) : evidenceData ? (
@@ -181,11 +181,11 @@ export const InvestigationCenter: React.FC = () => {
               {/* Contributing factors synthesized */}
               {evidenceData.possible_contributing_factors &&
                 evidenceData.possible_contributing_factors.length > 0 && (
-                  <div className="p-3.5 bg-amber-950/40 border border-amber-800/60 rounded-xl text-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.08)]">
-                    <span className="font-semibold block mb-1 text-slate-100">
+                  <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg text-amber-900">
+                    <span className="font-semibold block mb-1">
                       Identified Co-Occurrence Signals:
                     </span>
-                    <ul className="list-disc list-inside space-y-0.5 text-[11px] text-slate-300">
+                    <ul className="list-disc list-inside space-y-0.5 text-[11px]">
                       {evidenceData.possible_contributing_factors.map((f: string, i: number) => (
                         <li key={i}>{f}</li>
                       ))}
@@ -196,48 +196,48 @@ export const InvestigationCenter: React.FC = () => {
               {/* Breakdown Columns */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Product Breakdown */}
-                <div className="p-3.5 rounded-xl border border-slate-800 bg-slate-950/60">
-                  <span className="font-semibold text-slate-200 flex items-center gap-1.5 mb-2.5">
-                    <Package className="w-3.5 h-3.5 text-sky-400" />
+                <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
+                  <span className="font-semibold text-slate-700 flex items-center gap-1.5 mb-2">
+                    <Package className="w-3.5 h-3.5 text-sky-600" />
                     Product Concentrations
                   </span>
                   <div className="space-y-1.5">
                     {evidenceData.product_breakdown?.slice(0, 4).map((p: any) => (
-                      <div key={p.product} className="flex justify-between py-1 border-b border-slate-850 last:border-0">
-                        <span className="text-slate-400 truncate max-w-[140px]">{p.product}</span>
-                        <span className="font-mono text-sky-400 font-semibold">{p.pct}%</span>
+                      <div key={p.product} className="flex justify-between py-0.5">
+                        <span className="text-slate-600 truncate max-w-[140px]">{p.product}</span>
+                        <span className="font-mono text-slate-800 font-semibold">{p.pct}%</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Company Breakdown */}
-                <div className="p-3.5 rounded-xl border border-slate-800 bg-slate-950/60">
-                  <span className="font-semibold text-slate-200 flex items-center gap-1.5 mb-2.5">
-                    <Building2 className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
+                  <span className="font-semibold text-slate-700 flex items-center gap-1.5 mb-2">
+                    <Building2 className="w-3.5 h-3.5 text-emerald-600" />
                     Company Clusters
                   </span>
                   <div className="space-y-1.5">
                     {evidenceData.company_breakdown?.slice(0, 4).map((c: any) => (
-                      <div key={c.company} className="flex justify-between py-1 border-b border-slate-850 last:border-0">
-                        <span className="text-slate-400 truncate max-w-[140px]">{c.company}</span>
-                        <span className="font-mono text-emerald-400 font-semibold">{c.pct}%</span>
+                      <div key={c.company} className="flex justify-between py-0.5">
+                        <span className="text-slate-600 truncate max-w-[140px]">{c.company}</span>
+                        <span className="font-mono text-slate-800 font-semibold">{c.pct}%</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Geographic Breakdown */}
-                <div className="p-3.5 rounded-xl border border-slate-800 bg-slate-950/60">
-                  <span className="font-semibold text-slate-200 flex items-center gap-1.5 mb-2.5">
-                    <MapPin className="w-3.5 h-3.5 text-purple-400" />
+                <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
+                  <span className="font-semibold text-slate-700 flex items-center gap-1.5 mb-2">
+                    <MapPin className="w-3.5 h-3.5 text-purple-600" />
                     Geographic Regions
                   </span>
                   <div className="space-y-1.5">
                     {evidenceData.location_breakdown?.slice(0, 4).map((l: any) => (
-                      <div key={l.location} className="flex justify-between py-1 border-b border-slate-850 last:border-0">
-                        <span className="text-slate-400">{l.location}</span>
-                        <span className="font-mono text-purple-400 font-semibold">{l.pct}%</span>
+                      <div key={l.location} className="flex justify-between py-0.5">
+                        <span className="text-slate-600">{l.location}</span>
+                        <span className="font-mono text-slate-800 font-semibold">{l.pct}%</span>
                       </div>
                     ))}
                   </div>
@@ -248,17 +248,17 @@ export const InvestigationCenter: React.FC = () => {
               {evidenceData.representative_evidence &&
                 evidenceData.representative_evidence.length > 0 && (
                   <div>
-                    <span className="font-semibold text-slate-300 block mb-2">
+                    <span className="font-semibold text-slate-700 block mb-2">
                       Representative Evidence Records:
                     </span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {evidenceData.representative_evidence.slice(0, 4).map((ev: any) => (
                         <div
                           key={ev.id}
-                          className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-[11px] text-slate-300 leading-relaxed italic"
+                          className="p-2.5 rounded bg-white border border-slate-200 text-[11px] text-slate-600 leading-relaxed italic"
                         >
                           "{ev.text.substring(0, 180)}..."
-                          <span className="block mt-1 font-sans not-italic text-[10px] text-slate-500">
+                          <span className="block mt-1 font-sans not-italic text-[10px] text-slate-400">
                             {ev.company} • {ev.received_at || 'Undated'}
                           </span>
                         </div>
@@ -281,7 +281,7 @@ export const InvestigationCenter: React.FC = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="text-xs rounded-xl border border-slate-700/80 py-1.5 px-2.5 bg-slate-900 text-slate-200"
+                  className="text-xs rounded border border-slate-300 py-1 px-2 bg-white"
                 >
                   <option value="">All Statuses</option>
                   <option value="open">Open</option>
@@ -303,14 +303,14 @@ export const InvestigationCenter: React.FC = () => {
                     <div
                       key={inv.id}
                       onClick={() => setSelectedInvestigation(inv)}
-                      className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all ${
+                      className={`p-3 rounded-lg border text-xs cursor-pointer transition-all ${
                         selectedInvestigation?.id === inv.id
-                          ? 'border-sky-500 bg-sky-950/40 shadow-[0_0_12px_rgba(14,165,233,0.15)]'
-                          : 'border-slate-800 hover:border-slate-700 bg-slate-900/40'
+                          ? 'border-sky-500 bg-sky-50/50 shadow-xs'
+                          : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <span className="font-semibold text-slate-200">{inv.title}</span>
+                        <span className="font-semibold text-slate-900">{inv.title}</span>
                         <Badge
                           variant={
                             inv.status === 'open'
@@ -324,10 +324,10 @@ export const InvestigationCenter: React.FC = () => {
                           {inv.status}
                         </Badge>
                       </div>
-                      <p className="text-slate-400 line-clamp-1">{inv.description}</p>
-                      <div className="mt-2 flex items-center justify-between text-[10px] text-slate-500">
+                      <p className="text-slate-500 line-clamp-1">{inv.description}</p>
+                      <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400">
                         <span>{inv.issue_category || 'General'}</span>
-                        <span className="font-mono">{inv.notes?.length || 0} notes</span>
+                        <span>{inv.notes?.length || 0} notes</span>
                       </div>
                     </div>
                   ))}
@@ -344,11 +344,11 @@ export const InvestigationCenter: React.FC = () => {
                 subtitle={`Case #${selectedInvestigation.id} • Assigned: ${selectedInvestigation.assigned_department || 'Unassigned'}`}
                 actions={
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-slate-400">Status:</span>
+                    <span className="text-xs text-slate-500">Status:</span>
                     <select
                       value={selectedInvestigation.status}
                       onChange={(e) => handleUpdateStatus(selectedInvestigation.id, e.target.value)}
-                      className="text-xs rounded-xl border border-slate-700 py-1 px-2.5 bg-slate-900 text-slate-200 font-medium focus:outline-none focus:border-sky-500"
+                      className="text-xs rounded border border-slate-300 py-1 px-2 bg-white font-medium"
                     >
                       <option value="open">Open</option>
                       <option value="investigating">Investigating</option>
@@ -360,18 +360,18 @@ export const InvestigationCenter: React.FC = () => {
               >
                 <div className="space-y-4 text-xs">
                   <div>
-                    <h5 className="font-semibold text-slate-400 uppercase tracking-wider text-[11px] mb-1">
+                    <h5 className="font-semibold text-slate-700 uppercase tracking-wider text-[11px] mb-1">
                       Case Description:
                     </h5>
-                    <p className="text-slate-200 leading-relaxed bg-slate-950/70 p-3.5 rounded-xl border border-slate-800">
+                    <p className="text-slate-800 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
                       {selectedInvestigation.description}
                     </p>
                   </div>
 
                   {/* Notes Thread */}
                   <div>
-                    <h5 className="font-semibold text-slate-300 uppercase tracking-wider text-[11px] mb-2 flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-sky-400" />
+                    <h5 className="font-semibold text-slate-700 uppercase tracking-wider text-[11px] mb-2 flex items-center gap-1.5">
+                      <MessageSquare className="w-3.5 h-3.5 text-sky-600" />
                       Investigation Audit Notes ({selectedInvestigation.notes?.length || 0})
                     </h5>
 
@@ -380,17 +380,17 @@ export const InvestigationCenter: React.FC = () => {
                         selectedInvestigation.notes.map((note) => (
                           <div
                             key={note.id}
-                            className="p-3 rounded-xl border border-slate-800 bg-slate-950/60 shadow-xs"
+                            className="p-2.5 rounded-lg border border-slate-100 bg-white shadow-xs"
                           >
-                            <div className="flex justify-between items-center text-[10px] text-slate-500 mb-1">
-                              <span className="font-semibold text-sky-400">{note.author}</span>
+                            <div className="flex justify-between items-center text-[10px] text-slate-400 mb-1">
+                              <span className="font-semibold text-slate-700">{note.author}</span>
                               <span>{new Date(note.created_at).toLocaleString()}</span>
                             </div>
-                            <p className="text-slate-200 text-xs leading-relaxed">{note.note}</p>
+                            <p className="text-slate-700 text-xs leading-relaxed">{note.note}</p>
                           </div>
                         ))
                       ) : (
-                        <p className="text-slate-500 text-center py-4">No notes recorded yet.</p>
+                        <p className="text-slate-400 text-center py-4">No notes recorded yet.</p>
                       )}
                     </div>
 
@@ -401,7 +401,7 @@ export const InvestigationCenter: React.FC = () => {
                         value={newNoteText}
                         onChange={(e) => setNewNoteText(e.target.value)}
                         placeholder="Add investigation findings or operational update..."
-                        className="flex-1 text-xs rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-2 text-slate-200 focus:outline-none focus:border-sky-500"
+                        className="flex-1 text-xs rounded-lg border border-slate-300 px-3 py-2 focus:ring-sky-500"
                         onKeyDown={(e) => e.key === 'Enter' && handleAddNote()}
                       />
                       <Button
@@ -419,7 +419,7 @@ export const InvestigationCenter: React.FC = () => {
               </Card>
             ) : (
               <Card className="text-center py-20 text-slate-400">
-                <FolderGit2 className="w-10 h-10 mx-auto mb-2 text-slate-600" />
+                <FolderGit2 className="w-10 h-10 mx-auto mb-2 text-slate-300" />
                 <p className="text-xs">Select an investigation case on the left to inspect evidence and notes.</p>
               </Card>
             )}
@@ -437,27 +437,27 @@ export const InvestigationCenter: React.FC = () => {
         >
           <div className="space-y-4 text-xs">
             <div>
-              <label className="block font-semibold text-slate-300 mb-1.5">
-                Case Title <span className="text-rose-400">*</span>
+              <label className="block font-semibold text-slate-700 mb-1">
+                Case Title <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
                 value={newTitle}
                 onChange={(e) => setNewTitle(e.target.value)}
                 placeholder="e.g. Surge in Disputed Debt Collection Notices from Rowland Agency"
-                className="w-full py-2.5 px-3.5 border rounded-xl border-slate-700 bg-slate-950 text-slate-100 text-xs focus:outline-none focus:border-sky-500"
+                className="w-full py-2 px-3 border rounded-lg border-slate-300 text-xs focus:ring-sky-500"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold text-slate-300 mb-1.5">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Issue Category
                 </label>
                 <select
                   value={newCategory}
                   onChange={(e) => setNewCategory(e.target.value)}
-                  className="w-full py-2.5 px-3 border rounded-xl border-slate-700 bg-slate-950 text-slate-200 text-xs focus:outline-none focus:border-sky-500"
+                  className="w-full py-2 px-3 border rounded-lg border-slate-300 text-xs bg-white"
                 >
                   <option value="Credit Reporting & Repair">Credit Reporting & Repair</option>
                   <option value="Debt Collection & Harassment">Debt Collection & Harassment</option>
@@ -469,13 +469,13 @@ export const InvestigationCenter: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-semibold text-slate-300 mb-1.5">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Assigned Team / Department
                 </label>
                 <select
                   value={newDept}
                   onChange={(e) => setNewDept(e.target.value)}
-                  className="w-full py-2.5 px-3 border rounded-xl border-slate-700 bg-slate-950 text-slate-200 text-xs focus:outline-none focus:border-sky-500"
+                  className="w-full py-2 px-3 border rounded-lg border-slate-300 text-xs bg-white"
                 >
                   <option value="Operations">Operations</option>
                   <option value="Compliance & Legal">Compliance & Legal</option>
@@ -487,19 +487,19 @@ export const InvestigationCenter: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-semibold text-slate-300 mb-1.5">
-                Investigation Description & Hypotheses <span className="text-rose-400">*</span>
+              <label className="block font-semibold text-slate-700 mb-1">
+                Investigation Description & Hypotheses <span className="text-rose-500">*</span>
               </label>
               <textarea
                 rows={4}
                 value={newDesc}
                 onChange={(e) => setNewDesc(e.target.value)}
                 placeholder="Document observed co-occurrence patterns, affected products, and audit steps..."
-                className="w-full py-2.5 px-3.5 border rounded-xl border-slate-700 bg-slate-950 text-slate-100 text-xs focus:outline-none focus:border-sky-500"
+                className="w-full py-2 px-3 border rounded-lg border-slate-300 text-xs focus:ring-sky-500"
               />
             </div>
 
-            <div className="pt-4 flex justify-end gap-2 border-t border-slate-800">
+            <div className="pt-3 flex justify-end gap-2 border-t border-slate-100">
               <Button variant="ghost" onClick={() => setIsCreateOpen(false)}>
                 Cancel
               </Button>

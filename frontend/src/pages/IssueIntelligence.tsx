@@ -113,15 +113,13 @@ export const IssueIntelligence: React.FC = () => {
           title="Category Volume Trends Over Time"
           subtitle="Comparative time-series progression across leading complaint categories"
           actions={
-            <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+            <div className="flex items-center gap-1.5 bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs">
               {['daily', 'weekly', 'monthly'].map((p) => (
                 <button
                   key={p}
                   onClick={() => setPeriod(p)}
-                  className={`px-3 py-1 rounded-lg capitalize font-medium transition-all ${
-                    period === p
-                      ? 'bg-sky-950 text-sky-300 border border-sky-800/60 shadow-xs font-semibold'
-                      : 'text-slate-400 hover:text-slate-200'
+                  className={`px-2.5 py-1 rounded capitalize font-medium transition-all ${
+                    period === p ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-800'
                   }`}
                 >
                   {p}
@@ -134,29 +132,21 @@ export const IssueIntelligence: React.FC = () => {
             {trendData && trendData.series.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={trendData.series} margin={{ top: 10, right: 30, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.6} />
-                  <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#94a3b8' }} stroke="#475569" />
-                  <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} stroke="#475569" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                  <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#64748b' }} />
+                  <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
                   <Tooltip
-                    contentStyle={{
-                      backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                      borderColor: '#334155',
-                      borderRadius: '12px',
-                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)',
-                      color: '#f8fafc',
-                      fontSize: '12px',
-                    }}
+                    contentStyle={{ borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '12px' }}
                   />
-                  <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px', color: '#cbd5e1' }} />
+                  <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                   {trendData.categories.map((cat: string, idx: number) => (
                     <Line
                       key={cat}
                       type="monotone"
                       dataKey={cat}
                       stroke={CATEGORY_COLORS[idx % CATEGORY_COLORS.length]}
-                      strokeWidth={2.5}
-                      dot={{ r: 3.5, strokeWidth: 1 }}
-                      activeDot={{ r: 6 }}
+                      strokeWidth={2}
+                      dot={{ r: 3 }}
                     />
                   ))}
                 </LineChart>
@@ -179,10 +169,10 @@ export const IssueIntelligence: React.FC = () => {
               {emergingIssues.map((alert, idx) => (
                 <div
                   key={idx}
-                  className="p-4.5 rounded-xl border border-amber-800/60 bg-amber-950/20 backdrop-blur-xs flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-[0_0_15px_rgba(245,158,11,0.06)]"
+                  className="p-4 rounded-xl border border-amber-200 bg-amber-50/40 flex flex-col md:flex-row md:items-center justify-between gap-4"
                 >
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2.5">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
                       <Badge
                         variant={
                           alert.alert_level === 'Critical'
@@ -194,28 +184,28 @@ export const IssueIntelligence: React.FC = () => {
                       >
                         {alert.alert_level} Alert
                       </Badge>
-                      <h4 className="font-bold text-sm text-slate-100">{alert.category}</h4>
+                      <h4 className="font-bold text-sm text-slate-900">{alert.category}</h4>
                     </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">{alert.trigger_rule}</p>
-                    <span className="text-[11px] text-slate-500 block">
-                      Evaluation Window: {alert.time_window}
+                    <p className="text-xs text-slate-600 leading-relaxed">{alert.trigger_rule}</p>
+                    <span className="text-[11px] text-slate-400 block">
+                      Window: {alert.time_window}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-5 text-right flex-shrink-0">
+                  <div className="flex items-center gap-4 text-right flex-shrink-0">
                     <div>
-                      <span className="text-[10px] text-slate-400 uppercase tracking-wider block">
+                      <span className="text-[10px] text-slate-500 uppercase tracking-wider block">
                         Recent vs Prior
                       </span>
-                      <span className="text-xs font-mono font-medium text-slate-200">
+                      <span className="text-xs font-mono font-medium text-slate-700">
                         {alert.current_volume} vs {alert.previous_volume}
                       </span>
                     </div>
-                    <div className="bg-rose-950/50 border border-rose-800/60 px-3 py-1.5 rounded-xl">
-                      <span className="text-[10px] text-rose-300 uppercase tracking-wider block font-semibold">
+                    <div>
+                      <span className="text-[10px] text-slate-500 uppercase tracking-wider block">
                         Growth
                       </span>
-                      <span className="text-sm font-bold text-rose-400 font-mono">
+                      <span className="text-sm font-bold text-rose-600 font-mono">
                         +{alert.percentage_change}%
                       </span>
                     </div>
@@ -237,7 +227,7 @@ export const IssueIntelligence: React.FC = () => {
         >
           <div className="overflow-x-auto text-xs">
             <table className="w-full text-left">
-              <thead className="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+              <thead className="border-b border-slate-200 text-slate-400 uppercase font-semibold">
                 <tr>
                   <th className="py-3 px-3">Rank</th>
                   <th className="py-3 px-3">Category</th>
@@ -249,11 +239,11 @@ export const IssueIntelligence: React.FC = () => {
                   <th className="py-3 px-3 w-1/3">Explanation Rationale</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60">
+              <tbody className="divide-y divide-slate-100">
                 {priorities.map((p, idx) => (
-                  <tr key={p.category} className="hover:bg-slate-800/40 transition-colors">
-                    <td className="py-3 px-3 font-bold font-mono text-slate-500">#{idx + 1}</td>
-                    <td className="py-3 px-3 font-semibold text-slate-200">{p.category}</td>
+                  <tr key={p.category} className="hover:bg-slate-50">
+                    <td className="py-3 px-3 font-bold text-slate-500">#{idx + 1}</td>
+                    <td className="py-3 px-3 font-semibold text-slate-800">{p.category}</td>
                     <td className="py-3 px-3">
                       <Badge
                         variant={
@@ -267,19 +257,19 @@ export const IssueIntelligence: React.FC = () => {
                         {p.priority_level}
                       </Badge>
                     </td>
-                    <td className="py-3 px-3 font-bold text-sky-400 font-mono">{p.total_score}</td>
-                    <td className="py-3 px-3 text-slate-300 font-mono">
+                    <td className="py-3 px-3 font-bold text-sky-700 font-mono">{p.total_score}</td>
+                    <td className="py-3 px-3 text-slate-600 font-mono">
                       {p.normalized_volume} ({p.complaint_count})
                     </td>
-                    <td className="py-3 px-3 text-slate-300 font-mono">
+                    <td className="py-3 px-3 text-slate-600 font-mono">
                       {p.normalized_growth} (+{p.recent_growth_rate}%)
                     </td>
-                    <td className="py-3 px-3 text-slate-400 font-mono">
+                    <td className="py-3 px-3 text-slate-600 font-mono">
                       {p.normalized_severity !== null && p.normalized_severity !== undefined
                         ? p.normalized_severity
                         : 'N/A (Absent)'}
                     </td>
-                    <td className="py-3 px-3 text-slate-400 leading-relaxed text-[11px]">
+                    <td className="py-3 px-3 text-slate-600 leading-relaxed text-[11px]">
                       {p.explanation}
                     </td>
                   </tr>
@@ -300,9 +290,9 @@ export const IssueIntelligence: React.FC = () => {
         >
           <div className="space-y-5 text-xs">
             <div>
-              <div className="flex justify-between mb-1.5 font-semibold text-slate-300">
+              <div className="flex justify-between mb-1.5 font-semibold text-slate-700">
                 <span>Volume Weight (w_vol):</span>
-                <span className="font-mono text-sky-400">{volumeWeight}</span>
+                <span className="font-mono text-sky-600">{volumeWeight}</span>
               </div>
               <input
                 type="range"
@@ -311,14 +301,14 @@ export const IssueIntelligence: React.FC = () => {
                 step={0.05}
                 value={volumeWeight}
                 onChange={(e) => setVolumeWeight(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
+                className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
               />
             </div>
 
             <div>
-              <div className="flex justify-between mb-1.5 font-semibold text-slate-300">
+              <div className="flex justify-between mb-1.5 font-semibold text-slate-700">
                 <span>Growth Weight (w_gro):</span>
-                <span className="font-mono text-sky-400">{growthWeight}</span>
+                <span className="font-mono text-sky-600">{growthWeight}</span>
               </div>
               <input
                 type="range"
@@ -327,14 +317,14 @@ export const IssueIntelligence: React.FC = () => {
                 step={0.05}
                 value={growthWeight}
                 onChange={(e) => setGrowthWeight(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
+                className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
               />
             </div>
 
             <div>
-              <div className="flex justify-between mb-1.5 font-semibold text-slate-300">
+              <div className="flex justify-between mb-1.5 font-semibold text-slate-700">
                 <span>Severity Weight (w_sev):</span>
-                <span className="font-mono text-sky-400">{severityWeight}</span>
+                <span className="font-mono text-sky-600">{severityWeight}</span>
               </div>
               <input
                 type="range"
@@ -343,7 +333,7 @@ export const IssueIntelligence: React.FC = () => {
                 step={0.05}
                 value={severityWeight}
                 onChange={(e) => setSeverityWeight(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
+                className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
               />
             </div>
 
@@ -353,7 +343,7 @@ export const IssueIntelligence: React.FC = () => {
               fabricating dummy severity labels.
             </Alert>
 
-            <div className="pt-4 flex justify-end gap-2 border-t border-slate-800">
+            <div className="pt-3 flex justify-end gap-2 border-t border-slate-100">
               <Button variant="ghost" onClick={() => setIsWeightModalOpen(false)}>
                 Cancel
               </Button>

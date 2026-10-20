@@ -16,31 +16,31 @@ export const Alert: React.FC<AlertProps> = ({
 }) => {
   const configs = {
     info: {
-      bg: 'bg-sky-950/40 border-sky-800/60 text-sky-200 shadow-[0_0_15px_rgba(14,165,233,0.08)]',
-      icon: <Info className="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5" />,
+      bg: 'bg-sky-50 border-sky-200 text-sky-800',
+      icon: <Info className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />,
     },
     success: {
-      bg: 'bg-emerald-950/40 border-emerald-800/60 text-emerald-200 shadow-[0_0_15px_rgba(16,185,129,0.08)]',
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />,
+      bg: 'bg-emerald-50 border-emerald-200 text-emerald-800',
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />,
     },
     warning: {
-      bg: 'bg-amber-950/40 border-amber-800/60 text-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.08)]',
-      icon: <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />,
+      bg: 'bg-amber-50 border-amber-200 text-amber-800',
+      icon: <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />,
     },
     error: {
-      bg: 'bg-rose-950/40 border-rose-800/60 text-rose-200 shadow-[0_0_15px_rgba(244,63,94,0.08)]',
-      icon: <AlertCircle className="w-5 h-5 text-rose-400 flex-shrink-0 mt-0.5" />,
+      bg: 'bg-rose-50 border-rose-200 text-rose-800',
+      icon: <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />,
     },
   };
 
   const { bg, icon } = configs[type];
 
   return (
-    <div className={`p-4 rounded-xl border backdrop-blur-md flex items-start gap-3 text-sm ${bg} ${className}`}>
+    <div className={`p-4 rounded-xl border flex items-start gap-3 text-sm ${bg} ${className}`}>
       {icon}
       <div className="flex-1">
-        {title && <h5 className="font-semibold text-sm mb-0.5 text-slate-100">{title}</h5>}
-        <div className="text-xs leading-relaxed text-slate-300">{children}</div>
+        {title && <h5 className="font-semibold text-sm mb-0.5">{title}</h5>}
+        <div className="text-xs leading-relaxed">{children}</div>
       </div>
     </div>
   );

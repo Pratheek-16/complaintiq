@@ -90,12 +90,12 @@ export const Dashboard: React.FC = () => {
 
       {isEmpty ? (
         <Card className="text-center py-16 px-6">
-          <div className="w-16 h-16 rounded-2xl bg-sky-950/60 text-sky-400 border border-sky-800/60 flex items-center justify-center mx-auto mb-4 shadow-[0_0_25px_rgba(14,165,233,0.25)]">
+          <div className="w-16 h-16 rounded-2xl bg-sky-50 text-sky-600 border border-sky-100 flex items-center justify-center mx-auto mb-4">
             <Database className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-slate-100 mb-2">No Complaints Loaded Yet</h3>
-          <p className="text-sm text-slate-400 max-w-lg mx-auto mb-6">
-            Import the project dataset (<code className="text-sky-300 bg-sky-950/70 border border-sky-800/50 px-1.5 py-0.5 rounded font-mono">complaints.csv</code>)
+          <h3 className="text-xl font-bold text-slate-900 mb-2">No Complaints Loaded Yet</h3>
+          <p className="text-sm text-slate-500 max-w-lg mx-auto mb-6">
+            Import the project dataset (<code className="text-sky-700 bg-sky-50 px-1.5 py-0.5 rounded font-mono">complaints.csv</code>)
             or the curated narrative benchmark to populate the classifiers, discovery engine, and intelligence dashboards.
           </p>
           <div className="flex items-center justify-center gap-3">
@@ -157,35 +157,20 @@ export const Dashboard: React.FC = () => {
               <div className="h-64 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={metrics.category_distribution} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
-                    <defs>
-                      <linearGradient id="barGradient" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#0284c7" />
-                        <stop offset="100%" stopColor="#38bdf8" />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#334155" opacity={0.6} />
-                    <XAxis type="number" tick={{ fontSize: 11, fill: '#94a3b8' }} stroke="#475569" />
+                    <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e2e8f0" />
+                    <XAxis type="number" tick={{ fontSize: 11, fill: '#64748b' }} />
                     <YAxis
                       dataKey="category"
                       type="category"
-                      tick={{ fontSize: 11, fill: '#cbd5e1' }}
+                      tick={{ fontSize: 11, fill: '#475569' }}
                       width={120}
-                      stroke="#475569"
                       tickFormatter={(val) => (val.length > 18 ? val.substring(0, 18) + '...' : val)}
                     />
                     <Tooltip
                       formatter={(val: number) => [`${val.toLocaleString()} complaints`, 'Volume']}
-                      contentStyle={{
-                        backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                        borderColor: '#334155',
-                        borderRadius: '12px',
-                        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)',
-                        color: '#f8fafc',
-                        fontSize: '12px',
-                      }}
-                      itemStyle={{ color: '#38bdf8' }}
+                      contentStyle={{ borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '12px' }}
                     />
-                    <Bar dataKey="count" fill="url(#barGradient)" radius={[0, 6, 6, 0]} />
+                    <Bar dataKey="count" fill="#0284c7" radius={[0, 4, 4, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -207,26 +192,18 @@ export const Dashboard: React.FC = () => {
                     <AreaChart data={metrics.monthly_trend} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>
                       <defs>
                         <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#38bdf8" stopOpacity={0.45} />
-                          <stop offset="95%" stopColor="#6366f1" stopOpacity={0.0} />
+                          <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.4} />
+                          <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.0} />
                         </linearGradient>
                       </defs>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.6} />
-                      <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#94a3b8' }} stroke="#475569" />
-                      <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} stroke="#475569" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="period" tick={{ fontSize: 11, fill: '#64748b' }} />
+                      <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
                       <Tooltip
                         formatter={(val: number) => [`${val.toLocaleString()} complaints`, 'Total']}
-                        contentStyle={{
-                          backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                          borderColor: '#334155',
-                          borderRadius: '12px',
-                          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)',
-                          color: '#f8fafc',
-                          fontSize: '12px',
-                        }}
-                        itemStyle={{ color: '#38bdf8' }}
+                        contentStyle={{ borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '12px' }}
                       />
-                      <Area type="monotone" dataKey="count" stroke="#38bdf8" strokeWidth={2.5} fillOpacity={1} fill="url(#trendGradient)" />
+                      <Area type="monotone" dataKey="count" stroke="#0284c7" strokeWidth={2} fillOpacity={1} fill="url(#trendGradient)" />
                     </AreaChart>
                   </ResponsiveContainer>
                 ) : (
@@ -252,7 +229,7 @@ export const Dashboard: React.FC = () => {
             >
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
+                  <thead className="border-b border-slate-200 text-slate-400 uppercase tracking-wider font-semibold">
                     <tr>
                       <th className="py-2.5">Category</th>
                       <th className="py-2.5">Priority</th>
@@ -260,10 +237,10 @@ export const Dashboard: React.FC = () => {
                       <th className="py-2.5">Count</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/60">
+                  <tbody className="divide-y divide-slate-100">
                     {metrics.top_priority_issues.map((issue, idx) => (
-                      <tr key={idx} className="hover:bg-slate-800/40 transition-colors">
-                        <td className="py-3 font-medium text-slate-200">{issue.category}</td>
+                      <tr key={idx} className="hover:bg-slate-50">
+                        <td className="py-3 font-medium text-slate-800">{issue.category}</td>
                         <td className="py-3">
                           <Badge
                             variant={
@@ -277,8 +254,8 @@ export const Dashboard: React.FC = () => {
                             {issue.priority_level}
                           </Badge>
                         </td>
-                        <td className="py-3 font-mono font-bold text-sky-400">{issue.total_score}</td>
-                        <td className="py-3 text-slate-400 font-mono">{issue.complaint_count}</td>
+                        <td className="py-3 font-semibold text-slate-700">{issue.total_score}</td>
+                        <td className="py-3 text-slate-500">{issue.complaint_count}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -302,11 +279,11 @@ export const Dashboard: React.FC = () => {
                     <div
                       key={inv.id}
                       onClick={() => navigate('/investigations')}
-                      className="p-3.5 rounded-xl border border-slate-800/80 bg-slate-850/60 hover:bg-slate-800/80 hover:border-slate-700 cursor-pointer transition-all flex items-center justify-between group"
+                      className="p-3 rounded-lg border border-slate-100 bg-slate-50/60 hover:bg-slate-100/80 cursor-pointer transition-colors flex items-center justify-between"
                     >
                       <div>
-                        <h4 className="text-xs font-semibold text-slate-200 group-hover:text-sky-300 transition-colors">{inv.title}</h4>
-                        <p className="text-[11px] text-slate-400 mt-0.5">
+                        <h4 className="text-xs font-semibold text-slate-900">{inv.title}</h4>
+                        <p className="text-[11px] text-slate-500 mt-0.5">
                           {inv.category || 'General'} • Created {inv.created_at}
                         </p>
                       </div>

@@ -103,11 +103,11 @@ export const ThemeDiscovery: React.FC = () => {
       <Card title="Topic Discovery Configuration" subtitle="Configure unsupervised learning parameters" className="mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">Algorithm</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Algorithm</label>
             <select
               value={algorithm}
               onChange={(e) => setAlgorithm(e.target.value)}
-              className="w-full text-xs rounded-xl border border-slate-700/80 py-2.5 px-3 bg-slate-950/70 text-slate-200 focus:outline-none focus:border-sky-500 font-medium"
+              className="w-full text-xs rounded-lg border-slate-300 py-2 px-3 border bg-white"
             >
               <option value="nmf">NMF (Non-negative Matrix Factorization)</option>
               <option value="lda">LDA (Latent Dirichlet Allocation)</option>
@@ -116,30 +116,26 @@ export const ThemeDiscovery: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
-              Number of Themes: <span className="text-sky-400 font-mono">{numTopics}</span>
-            </label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Number of Themes: {numTopics}</label>
             <input
               type="range"
               min={3}
               max={12}
               value={numTopics}
               onChange={(e) => setNumTopics(Number(e.target.value))}
-              className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
+              className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1">
-              Keywords per Theme: <span className="text-sky-400 font-mono">{numKeywords}</span>
-            </label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Keywords per Theme: {numKeywords}</label>
             <input
               type="range"
               min={5}
               max={15}
               value={numKeywords}
               onChange={(e) => setNumKeywords(Number(e.target.value))}
-              className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
+              className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
             />
           </div>
 
@@ -160,14 +156,14 @@ export const ThemeDiscovery: React.FC = () => {
       {/* Discovered Themes Grid */}
       {loading ? (
         <div className="py-24 text-center text-slate-500">
-          <div className="w-8 h-8 border-4 border-sky-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-          <p className="text-xs font-medium text-slate-400">Loading discovered themes...</p>
+          <div className="w-8 h-8 border-4 border-sky-600 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <p className="text-xs font-medium">Loading discovered themes...</p>
         </div>
       ) : topics.length === 0 ? (
         <Card className="text-center py-16 px-4">
-          <Layers className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h4 className="text-base font-bold text-slate-200">No Themes Discovered Yet</h4>
-          <p className="text-xs text-slate-400 max-w-md mx-auto mt-1 mb-4">
+          <Layers className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+          <h4 className="text-base font-bold text-slate-800">No Themes Discovered Yet</h4>
+          <p className="text-xs text-slate-500 max-w-md mx-auto mt-1 mb-4">
             Run NMF or LDA topic discovery on your imported complaint dataset to reveal recurring customer complaint patterns.
           </p>
           <Button variant="primary" size="sm" onClick={handleRunDiscovery} loading={discovering}>
@@ -182,17 +178,17 @@ export const ThemeDiscovery: React.FC = () => {
                 {/* Header with Title and Edit */}
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-400 bg-sky-950/60 px-2.5 py-0.5 rounded-full border border-sky-800/60 shadow-[0_0_8px_rgba(14,165,233,0.15)]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
                       Topic #{topic.topic_number} • {topic.algorithm.toUpperCase()}
                     </span>
-                    <h4 className="text-base font-bold text-slate-100 mt-1.5 flex items-center gap-2">
+                    <h4 className="text-base font-bold text-slate-900 mt-1 flex items-center gap-2">
                       {topic.topic_name}
                       <button
                         onClick={() => {
                           setEditingTopic(topic);
                           setNewName(topic.topic_name);
                         }}
-                        className="text-slate-500 hover:text-sky-400 transition-colors p-1 rounded-md hover:bg-slate-800"
+                        className="text-slate-400 hover:text-sky-600 transition-colors"
                         title="Rename topic"
                       >
                         <Edit2 className="w-3.5 h-3.5" />
@@ -200,7 +196,7 @@ export const ThemeDiscovery: React.FC = () => {
                     </h4>
                   </div>
                   <div className="text-right">
-                    <span className="text-base font-bold text-sky-400 font-mono">
+                    <span className="text-base font-bold text-slate-800 font-mono">
                       {topic.prevalence_percentage}%
                     </span>
                     <span className="text-[11px] text-slate-400 block -mt-0.5">
@@ -210,26 +206,26 @@ export const ThemeDiscovery: React.FC = () => {
                 </div>
 
                 {/* Prevalence Bar */}
-                <div className="w-full bg-slate-950 border border-slate-800 h-2 rounded-full mb-4 overflow-hidden">
+                <div className="w-full bg-slate-100 h-1.5 rounded-full mb-4 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-sky-500 to-indigo-500 h-full rounded-full shadow-[0_0_8px_rgba(14,165,233,0.4)]"
+                    className="bg-sky-500 h-full rounded-full"
                     style={{ width: `${Math.min(100, topic.prevalence_percentage * 2)}%` }}
                   />
                 </div>
 
                 {/* Keywords Cloud */}
                 <div className="mb-4">
-                  <h5 className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                  <h5 className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">
                     Distinguishing Keywords:
                   </h5>
                   <div className="flex flex-wrap gap-1.5">
                     {topic.keywords.map((kw, i) => (
                       <span
                         key={i}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-850/80 rounded-lg text-xs text-slate-200 border border-slate-800 font-mono hover:border-slate-700 transition-colors shadow-xs"
+                        className="inline-flex items-center gap-1 px-2 py-1 bg-slate-50 rounded text-xs text-slate-700 border border-slate-200 font-mono"
                       >
                         <span>{kw.term}</span>
-                        <span className="text-[10px] text-sky-400 font-semibold">({kw.weight})</span>
+                        <span className="text-[10px] text-slate-400">({kw.weight})</span>
                       </span>
                     ))}
                   </div>
@@ -238,14 +234,14 @@ export const ThemeDiscovery: React.FC = () => {
                 {/* Representative Complaints Excerpts */}
                 {topic.representative_complaints && topic.representative_complaints.length > 0 && (
                   <div>
-                    <h5 className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                    <h5 className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">
                       Representative Evidence:
                     </h5>
                     <div className="space-y-2">
                       {topic.representative_complaints.slice(0, 2).map((rep) => (
                         <div
                           key={rep.complaint_id}
-                          className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 border-l-2 border-l-sky-500 text-xs text-slate-300 leading-relaxed italic"
+                          className="p-2.5 rounded bg-slate-50/70 border border-slate-200/80 text-[11px] text-slate-600 leading-relaxed italic"
                         >
                           "{rep.text}"
                         </div>
@@ -269,19 +265,19 @@ export const ThemeDiscovery: React.FC = () => {
         >
           <div className="space-y-4 text-xs">
             <div>
-              <label className="block font-semibold text-slate-300 mb-1.5">
-                New Topic Name <span className="text-rose-400">*</span>
+              <label className="block font-semibold text-slate-700 mb-1">
+                New Topic Name <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
                 placeholder="e.g. Identity Theft & Unauthorized Account Inquiries"
-                className="w-full py-2.5 px-3.5 border rounded-xl border-slate-700 bg-slate-950 text-slate-100 text-xs font-medium focus:outline-none focus:border-sky-500"
+                className="w-full py-2 px-3 border rounded-lg border-slate-300 text-xs font-medium focus:ring-sky-500"
               />
             </div>
 
-            <div className="pt-4 flex justify-end gap-2 border-t border-slate-800">
+            <div className="pt-3 flex justify-end gap-2 border-t border-slate-100">
               <Button variant="ghost" onClick={() => setEditingTopic(null)}>
                 Cancel
               </Button>

@@ -14,12 +14,12 @@ export const Badge: React.FC<BadgeProps> = ({
   className = '',
 }) => {
   const variants = {
-    slate: 'bg-slate-800/80 text-slate-300 border-slate-700/80',
-    sky: 'bg-sky-950/70 text-sky-300 border-sky-700/60 shadow-[0_0_8px_rgba(14,165,233,0.15)]',
-    emerald: 'bg-emerald-950/70 text-emerald-300 border-emerald-700/60 shadow-[0_0_8px_rgba(16,185,129,0.15)]',
-    amber: 'bg-amber-950/70 text-amber-300 border-amber-700/60 shadow-[0_0_8px_rgba(245,158,11,0.15)]',
-    rose: 'bg-rose-950/70 text-rose-300 border-rose-700/60 shadow-[0_0_8px_rgba(244,63,94,0.15)]',
-    purple: 'bg-purple-950/70 text-purple-300 border-purple-700/60 shadow-[0_0_8px_rgba(168,85,247,0.15)]',
+    slate: 'bg-slate-100 text-slate-700 border-slate-200',
+    sky: 'bg-sky-50 text-sky-700 border-sky-200',
+    emerald: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    amber: 'bg-amber-50 text-amber-700 border-amber-200',
+    rose: 'bg-rose-50 text-rose-700 border-rose-200',
+    purple: 'bg-purple-50 text-purple-700 border-purple-200',
   };
 
   const sizes = {
@@ -29,7 +29,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center font-medium rounded-full border backdrop-blur-xs transition-all ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center font-medium rounded-full border ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
     </span>

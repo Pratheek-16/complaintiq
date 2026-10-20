@@ -56,20 +56,20 @@ export const Reports: React.FC = () => {
         {exportItems.map((item, idx) => (
           <Card key={idx} className="flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-3.5 mb-3.5">
-                <div className="w-11 h-11 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">{item.title}</h4>
-                  <span className="text-[10px] text-sky-400 font-mono">{item.filename}</span>
+                  <h4 className="text-sm font-bold text-slate-900">{item.title}</h4>
+                  <span className="text-[10px] text-slate-400 font-mono">{item.filename}</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">{item.description}</p>
+              <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between">
-              <span className="text-[11px] text-slate-500 font-medium">Format: UTF-8 CSV</span>
+            <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] text-slate-400 font-medium">Format: UTF-8 CSV</span>
               <Button
                 variant="primary"
                 size="sm"
