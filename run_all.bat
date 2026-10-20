@@ -8,7 +8,7 @@ start cmd /k "cd backend && python -m uvicorn app.main:app --host 127.0.0.1 --po
 timeout /t 3 /nobreak >nul
 
 echo Starting Frontend Dev Server in new window...
-start cmd /k "cd frontend && npm run dev"
+start cmd /k "cd frontend && npm.cmd run dev"
 
 echo.
 echo ComplaintIQ is running!
