@@ -109,16 +109,16 @@ export const AIAnalyzer: React.FC = () => {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder="Enter customer complaint narrative here... (e.g. 'I was charged double for a recurring subscription and customer support refused to issue a refund...')"
-                className="w-full text-xs sm:text-sm rounded-lg border-slate-300 shadow-xs focus:ring-sky-500 focus:border-sky-500 p-3.5 border font-sans text-slate-800"
+                className="w-full text-xs sm:text-sm rounded-xl border border-slate-700/80 bg-slate-950/70 p-4 font-sans text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/40 shadow-inner"
               />
 
               <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                <div className="flex items-center gap-2 text-xs text-slate-500">
+                <div className="flex items-center gap-2 text-xs text-slate-400">
                   <span>Confidence Threshold:</span>
                   <select
                     value={uncertaintyThreshold}
                     onChange={(e) => setUncertaintyThreshold(Number(e.target.value))}
-                    className="text-xs rounded border-slate-300 py-1 px-2 border bg-white"
+                    className="text-xs rounded-lg border-slate-700 py-1.5 px-2.5 border bg-slate-900 text-slate-200 focus:outline-none focus:border-sky-500"
                   >
                     <option value={0.45}>45% (Permissive)</option>
                     <option value={0.55}>55% (Standard)</option>
@@ -148,12 +148,12 @@ export const AIAnalyzer: React.FC = () => {
                     setInputText(sample.text);
                     handleAnalyze(sample.text);
                   }}
-                  className="p-3 text-left rounded-lg border border-slate-200 hover:border-sky-300 hover:bg-sky-50/40 transition-all group"
+                  className="p-3.5 text-left rounded-xl border border-slate-800 bg-slate-900/40 hover:border-sky-500/50 hover:bg-sky-950/20 transition-all group cursor-pointer"
                 >
-                  <p className="text-xs font-semibold text-slate-800 group-hover:text-sky-700">
+                  <p className="text-xs font-semibold text-slate-200 group-hover:text-sky-300 transition-colors">
                     {sample.title}
                   </p>
-                  <p className="text-[11px] text-slate-500 truncate mt-1">{sample.text}</p>
+                  <p className="text-[11px] text-slate-400 truncate mt-1">{sample.text}</p>
                 </button>
               ))}
             </div>
@@ -171,18 +171,18 @@ export const AIAnalyzer: React.FC = () => {
               >
                 <div className="space-y-4">
                   {/* Category Banner */}
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                  <div className="p-4.5 rounded-xl bg-gradient-to-r from-sky-950/60 to-slate-900/80 border border-sky-800/50 shadow-[0_0_20px_rgba(14,165,233,0.12)]">
+                    <span className="text-[11px] text-sky-400 uppercase tracking-wider font-semibold">
                       Predicted Category
                     </span>
-                    <h3 className="text-xl font-bold text-slate-900 mt-1">
+                    <h3 className="text-xl font-bold text-slate-100 mt-1">
                       {prediction.predicted_category}
                     </h3>
 
                     <div className="mt-3 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-medium text-slate-600">Decision Strength:</span>
-                        <span className="text-sm font-bold text-sky-700 font-mono">
+                        <span className="text-xs font-medium text-slate-400">Decision Strength:</span>
+                        <span className="text-sm font-bold text-sky-400 font-mono">
                           {(prediction.confidence * 100).toFixed(1)}%
                         </span>
                       </div>
@@ -200,14 +200,14 @@ export const AIAnalyzer: React.FC = () => {
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="w-full bg-slate-200 h-2 rounded-full mt-2 overflow-hidden">
+                    <div className="w-full bg-slate-950 h-2 rounded-full mt-3 overflow-hidden border border-slate-800">
                       <div
-                        className={`h-full rounded-full ${
+                        className={`h-full rounded-full transition-all duration-500 ${
                           prediction.confidence_level === 'High'
-                            ? 'bg-emerald-500'
+                            ? 'bg-gradient-to-r from-emerald-500 to-teal-400 shadow-[0_0_10px_rgba(16,185,129,0.5)]'
                             : prediction.confidence_level === 'Medium'
-                            ? 'bg-amber-500'
-                            : 'bg-rose-500'
+                            ? 'bg-gradient-to-r from-amber-500 to-orange-400 shadow-[0_0_10px_rgba(245,158,11,0.5)]'
+                            : 'bg-gradient-to-r from-rose-500 to-red-400 shadow-[0_0_10px_rgba(244,63,94,0.5)]'
                         }`}
                         style={{ width: `${Math.min(100, prediction.confidence * 100)}%` }}
                       />
@@ -216,8 +216,8 @@ export const AIAnalyzer: React.FC = () => {
 
                   {/* Uncertainty Warning if applicable */}
                   {prediction.is_uncertain && (
-                    <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-2 text-xs text-amber-900">
-                      <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div className="p-3 bg-amber-950/40 border border-amber-800/60 rounded-xl flex items-start gap-2.5 text-xs text-amber-200 shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+                      <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
                         <strong className="block font-semibold">Flagged for Human Review</strong>
                         Confidence score is below configured threshold (
@@ -228,7 +228,7 @@ export const AIAnalyzer: React.FC = () => {
 
                   {/* Top Influential Terms */}
                   <div>
-                    <h5 className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                    <h5 className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
                       Key Influential Features (N-Grams)
                     </h5>
                     {prediction.influential_terms.length > 0 ? (
@@ -236,32 +236,41 @@ export const AIAnalyzer: React.FC = () => {
                         {prediction.influential_terms.map((term, i) => (
                           <span
                             key={i}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs bg-sky-50 text-sky-800 border border-sky-200 font-mono"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs bg-sky-950/60 text-sky-300 border border-sky-800/60 font-mono shadow-[0_0_8px_rgba(14,165,233,0.1)]"
                           >
                             <span>{term.term}</span>
-                            <span className="text-[10px] text-sky-500 font-semibold">
+                            <span className="text-[10px] text-sky-400 font-bold bg-sky-900/40 px-1 py-0.2 rounded">
                               +{term.weight.toFixed(2)}
                             </span>
                           </span>
                         ))}
                       </div>
                     ) : (
-                      <p className="text-xs text-slate-400">No single dominant term detected.</p>
+                      <p className="text-xs text-slate-500">No single dominant term detected.</p>
                     )}
                   </div>
 
                   {/* All Class Probabilities */}
                   <div>
-                    <h5 className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                    <h5 className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
                       Class Probability Distribution
                     </h5>
-                    <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                    <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
                       {Object.entries(prediction.all_class_probabilities)
                         .sort((a, b) => b[1] - a[1])
                         .map(([cat, prob]) => (
-                          <div key={cat} className="flex items-center justify-between text-xs py-1 px-2 rounded bg-slate-50">
-                            <span className="text-slate-700 truncate max-w-[200px]">{cat}</span>
-                            <span className="font-mono text-slate-600 font-medium">
+                          <div
+                            key={cat}
+                            className="relative overflow-hidden flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-slate-900/60 border border-slate-800/80"
+                          >
+                            <div
+                              className="absolute left-0 top-0 bottom-0 bg-sky-500/15 rounded-lg pointer-events-none transition-all"
+                              style={{ width: `${Math.min(100, prob * 100)}%` }}
+                            />
+                            <span className="text-slate-300 truncate max-w-[210px] relative z-10 font-medium">
+                              {cat}
+                            </span>
+                            <span className="font-mono text-sky-400 font-semibold relative z-10">
                               {(prob * 100).toFixed(1)}%
                             </span>
                           </div>
@@ -270,8 +279,8 @@ export const AIAnalyzer: React.FC = () => {
                   </div>
 
                   {/* Human-in-the-Loop Feedback Section */}
-                  <div className="pt-3 border-t border-slate-100">
-                    <span className="text-xs font-semibold text-slate-700 block mb-2">
+                  <div className="pt-3 border-t border-slate-800/80">
+                    <span className="text-xs font-semibold text-slate-300 block mb-2">
                       Human Review Verification:
                     </span>
                     <div className="flex items-center gap-2">
@@ -279,14 +288,14 @@ export const AIAnalyzer: React.FC = () => {
                         variant="outline"
                         size="sm"
                         onClick={() => handleConfirmOrCorrect(true)}
-                        icon={<CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />}
+                        icon={<CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
                       >
-                        Confirm Predicted
+                        Confirm
                       </Button>
                       <select
                         value={selectedCorrection}
                         onChange={(e) => setSelectedCorrection(e.target.value)}
-                        className="text-xs rounded border-slate-300 py-1.5 px-2 border bg-white flex-1"
+                        className="text-xs rounded-lg border-slate-700 py-1.5 px-2 border bg-slate-900 text-slate-200 flex-1 focus:outline-none focus:border-sky-500"
                       >
                         {Object.keys(prediction.all_class_probabilities).map((c) => (
                           <option key={c} value={c}>{c}</option>
@@ -305,11 +314,11 @@ export const AIAnalyzer: React.FC = () => {
               </Card>
             </div>
           ) : (
-            <Card className="text-center py-16 px-4">
-              <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-3">
-                <BrainCircuit className="w-6 h-6" />
+            <Card className="text-center py-20 px-4 bg-slate-900/40 border-slate-800">
+              <div className="w-14 h-14 rounded-2xl bg-sky-950/60 text-sky-400 border border-sky-800/60 flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(14,165,233,0.15)]">
+                <BrainCircuit className="w-7 h-7" />
               </div>
-              <h4 className="text-sm font-semibold text-slate-700">Awaiting Input Text</h4>
+              <h4 className="text-sm font-semibold text-slate-200">Awaiting Input Text</h4>
               <p className="text-xs text-slate-400 max-w-xs mx-auto mt-1">
                 Enter complaint text or choose a preset prompt to generate category prediction and feature weights.
               </p>

@@ -124,11 +124,11 @@ export const ModelLab: React.FC = () => {
       >
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end text-xs">
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">Candidate Models</label>
+            <label className="block font-semibold text-slate-300 mb-1">Candidate Models</label>
             <select
               value={trainingModelName}
               onChange={(e) => setTrainingModelName(e.target.value)}
-              className="w-full rounded-lg border-slate-300 py-2 px-3 border bg-white font-medium"
+              className="w-full rounded-xl border border-slate-700/80 py-2.5 px-3 bg-slate-950/70 text-slate-200 font-medium focus:outline-none focus:border-sky-500"
             >
               <option value="all">Compare All (Naive Bayes, LogReg, Linear SVM)</option>
               <option value="logistic_regression">Logistic Regression (Balanced L2)</option>
@@ -138,8 +138,8 @@ export const ModelLab: React.FC = () => {
           </div>
 
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">
-              Holdout Test Size: {(testSize * 100).toFixed(0)}%
+            <label className="block font-semibold text-slate-300 mb-1">
+              Holdout Test Size: <span className="text-sky-400 font-mono">{(testSize * 100).toFixed(0)}%</span>
             </label>
             <input
               type="range"
@@ -148,13 +148,13 @@ export const ModelLab: React.FC = () => {
               step={0.05}
               value={testSize}
               onChange={(e) => setTestSize(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
+              className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
             />
           </div>
 
           <div>
-            <label className="block font-semibold text-slate-700 mb-1">
-              Max TF-IDF Features: {maxFeatures.toLocaleString()}
+            <label className="block font-semibold text-slate-300 mb-1">
+              Max TF-IDF Features: <span className="text-sky-400 font-mono">{maxFeatures.toLocaleString()}</span>
             </label>
             <input
               type="range"
@@ -163,7 +163,7 @@ export const ModelLab: React.FC = () => {
               step={1000}
               value={maxFeatures}
               onChange={(e) => setMaxFeatures(Number(e.target.value))}
-              className="w-full h-2 bg-slate-200 rounded-lg accent-sky-600"
+              className="w-full h-2 bg-slate-800 rounded-lg accent-sky-500 cursor-pointer"
             />
           </div>
 
@@ -191,17 +191,17 @@ export const ModelLab: React.FC = () => {
           <div className="py-12 text-center text-slate-400">Loading benchmark results...</div>
         ) : !comparison || comparison.models.length === 0 ? (
           <div className="py-12 text-center text-slate-400">
-            <Cpu className="w-10 h-10 mx-auto mb-2 text-slate-300" />
+            <Cpu className="w-10 h-10 mx-auto mb-2 text-slate-600" />
             <p className="text-xs">No trained models found. Run training above to populate comparison metrics.</p>
           </div>
         ) : (
           <div className="overflow-x-auto text-xs">
             <table className="w-full text-left">
-              <thead className="border-b border-slate-200 text-slate-400 uppercase font-semibold">
+              <thead className="border-b border-slate-800 text-slate-400 uppercase font-semibold">
                 <tr>
                   <th className="py-3 px-3">Model</th>
                   <th className="py-3 px-3">Status</th>
-                  <th className="py-3 px-3 font-bold text-sky-900">Macro-F1 (Primary)</th>
+                  <th className="py-3 px-3 font-bold text-sky-400">Macro-F1 (Primary)</th>
                   <th className="py-3 px-3">Accuracy</th>
                   <th className="py-3 px-3">Weighted-F1</th>
                   <th className="py-3 px-3">Precision / Recall</th>
@@ -210,20 +210,20 @@ export const ModelLab: React.FC = () => {
                   <th className="py-3 px-3 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-800/60">
                 {comparison.models.map((m) => (
                   <tr
                     key={m.id}
                     onClick={() => setSelectedModel(m)}
                     className={`cursor-pointer transition-colors ${
-                      selectedModel?.id === m.id ? 'bg-sky-50/70 font-medium' : 'hover:bg-slate-50'
+                      selectedModel?.id === m.id ? 'bg-sky-950/40 border-l-2 border-sky-400 font-medium' : 'hover:bg-slate-800/40'
                     }`}
                   >
                     <td className="py-3 px-3">
-                      <span className="font-bold text-slate-900 block capitalize">
+                      <span className="font-bold text-slate-100 block capitalize">
                         {m.model_name.replace('_', ' ')}
                       </span>
-                      <span className="text-[10px] text-slate-400 font-mono">{m.model_version}</span>
+                      <span className="text-[10px] text-slate-500 font-mono">{m.model_version}</span>
                     </td>
                     <td className="py-3 px-3">
                       {m.is_active ? (
@@ -232,22 +232,22 @@ export const ModelLab: React.FC = () => {
                         <Badge variant="slate">Archived</Badge>
                       )}
                     </td>
-                    <td className="py-3 px-3 font-mono font-bold text-sky-700 text-sm">
+                    <td className="py-3 px-3 font-mono font-bold text-sky-400 text-sm">
                       {(m.macro_f1 * 100).toFixed(1)}%
                     </td>
-                    <td className="py-3 px-3 font-mono text-slate-700">
+                    <td className="py-3 px-3 font-mono text-slate-300">
                       {(m.accuracy * 100).toFixed(1)}%
                     </td>
-                    <td className="py-3 px-3 font-mono text-slate-700">
+                    <td className="py-3 px-3 font-mono text-slate-300">
                       {(m.weighted_f1 * 100).toFixed(1)}%
                     </td>
-                    <td className="py-3 px-3 font-mono text-slate-600">
+                    <td className="py-3 px-3 font-mono text-slate-400">
                       {(m.macro_precision * 100).toFixed(0)}% / {(m.macro_recall * 100).toFixed(0)}%
                     </td>
-                    <td className="py-3 px-3 text-slate-500 font-mono">
+                    <td className="py-3 px-3 text-slate-400 font-mono">
                       {m.train_count} / {m.test_count}
                     </td>
-                    <td className="py-3 px-3 text-slate-500 font-mono">
+                    <td className="py-3 px-3 text-slate-400 font-mono">
                       {m.duration_seconds ? `${m.duration_seconds}s` : '—'}
                     </td>
                     <td className="py-3 px-3 text-right">
@@ -286,13 +286,13 @@ export const ModelLab: React.FC = () => {
                   <table className="w-full text-center border-collapse">
                     <thead>
                       <tr>
-                        <th className="p-1.5 text-left text-[10px] text-slate-400 uppercase font-semibold">
+                        <th className="p-1.5 text-left text-[10px] text-slate-500 uppercase font-semibold">
                           True \ Pred
                         </th>
                         {selectedModel.confusion_matrix.labels.map((l) => (
                           <th
                             key={l}
-                            className="p-1.5 text-[10px] text-slate-500 font-semibold truncate max-w-[80px]"
+                            className="p-1.5 text-[10px] text-slate-400 font-semibold truncate max-w-[80px]"
                             title={l}
                           >
                             {l.substring(0, 10)}...
@@ -307,23 +307,22 @@ export const ModelLab: React.FC = () => {
                         return (
                           <tr key={rIdx}>
                             <td
-                              className="p-1.5 text-left font-semibold text-slate-700 truncate max-w-[120px]"
+                              className="p-1.5 text-left font-semibold text-slate-300 truncate max-w-[120px]"
                               title={trueLabel}
                             >
                               {trueLabel.substring(0, 14)}...
                             </td>
                             {row.map((val, cIdx) => {
                               const isDiagonal = rIdx === cIdx;
-                              const intensity = rowTotal > 0 ? Math.round((val / rowTotal) * 100) : 0;
                               return (
                                 <td
                                   key={cIdx}
-                                  className={`p-2 border font-mono font-medium ${
+                                  className={`p-2 border font-mono font-medium transition-colors ${
                                     isDiagonal
-                                      ? 'bg-sky-100 text-sky-900 border-sky-200 font-bold'
+                                      ? 'bg-sky-950/70 text-sky-300 border-sky-800/80 font-bold shadow-[inset_0_0_8px_rgba(14,165,233,0.18)]'
                                       : val > 0
-                                      ? 'bg-rose-50 text-rose-800 border-rose-100'
-                                      : 'bg-white text-slate-300 border-slate-100'
+                                      ? 'bg-rose-950/40 text-rose-300 border-rose-900/60'
+                                      : 'bg-slate-900/40 text-slate-600 border-slate-800/70'
                                   }`}
                                   title={`True: ${trueLabel}, Predicted: ${selectedModel.confusion_matrix.labels[cIdx]}`}
                                 >
@@ -353,23 +352,23 @@ export const ModelLab: React.FC = () => {
               Object.keys(selectedModel.per_class_metrics).length > 0 ? (
                 <div className="overflow-x-auto text-xs">
                   <table className="w-full text-left">
-                    <thead className="border-b border-slate-200 text-slate-400 uppercase font-semibold">
+                    <thead className="border-b border-slate-800 text-slate-400 uppercase font-semibold">
                       <tr>
                         <th className="py-2.5">Category</th>
                         <th className="py-2.5">Precision</th>
                         <th className="py-2.5">Recall</th>
-                        <th className="py-2.5 font-bold text-sky-900">F1-Score</th>
+                        <th className="py-2.5 font-bold text-sky-400">F1-Score</th>
                         <th className="py-2.5">Support</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100 font-mono">
+                    <tbody className="divide-y divide-slate-800/60 font-mono">
                       {Object.entries(selectedModel.per_class_metrics).map(([cat, metrics]) => (
-                        <tr key={cat} className="hover:bg-slate-50">
-                          <td className="py-2.5 font-sans font-medium text-slate-800">{cat}</td>
-                          <td className="py-2.5 text-slate-600">{(metrics.precision * 100).toFixed(1)}%</td>
-                          <td className="py-2.5 text-slate-600">{(metrics.recall * 100).toFixed(1)}%</td>
-                          <td className="py-2.5 font-bold text-sky-700">{(metrics.f1_score * 100).toFixed(1)}%</td>
-                          <td className="py-2.5 text-slate-400 font-sans">{metrics.support}</td>
+                        <tr key={cat} className="hover:bg-slate-800/40">
+                          <td className="py-2.5 font-sans font-medium text-slate-200">{cat}</td>
+                          <td className="py-2.5 text-slate-400">{(metrics.precision * 100).toFixed(1)}%</td>
+                          <td className="py-2.5 text-slate-400">{(metrics.recall * 100).toFixed(1)}%</td>
+                          <td className="py-2.5 font-bold text-sky-400">{(metrics.f1_score * 100).toFixed(1)}%</td>
+                          <td className="py-2.5 text-slate-500 font-sans">{metrics.support}</td>
                         </tr>
                       ))}
                     </tbody>
