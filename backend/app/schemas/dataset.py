@@ -37,6 +37,8 @@ class DatasetImportRequest(BaseModel):
     column_mapping: ColumnMapping
     max_rows: Optional[int] = Field(None, description="Optional limit of rows to import")
     offset_rows: Optional[int] = Field(0, description="Optional offset of rows")
+    replace_existing: Optional[bool] = Field(False, description="Whether to clear previous complaints before importing")
+
 
 class DatasetImportResponse(BaseModel):
     import_id: int

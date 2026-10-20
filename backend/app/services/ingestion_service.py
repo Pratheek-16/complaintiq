@@ -207,11 +207,20 @@ class IngestionService:
         file_path: str,
         mapping: ColumnMapping,
         max_rows: int | None = 10000,
-        offset_rows: int = 0
+        offset_rows: int = 0,
+        replace_existing: bool = False
     ) -> DatasetImport:
         """Imports CSV records into the complaints table and records audit log."""
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
+
+        if replace_existing:
+            from app.models.topic import ComplaintTopic, DiscoveredTopic
+            db.query(ComplaintTopic).delete()
+            db.query(DiscoveredTopic).delete()
+            db.query(Complaint).delete()
+            db.commit()
+
 
         import_record = DatasetImport(
             filename=os.path.basename(file_path),

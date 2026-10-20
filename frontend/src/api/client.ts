@@ -38,12 +38,21 @@ export const apiClient = {
     });
     return res.data as ValidationReport;
   },
-  importDataset: async (filePath: string, mapping: ColumnMapping, maxRows?: number, offsetRows: number = 0) => {
+  uploadDataset: async (file: File) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    const res = await api.post('/datasets/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return res.data;
+  },
+  importDataset: async (filePath: string, mapping: ColumnMapping, maxRows?: number, offsetRows: number = 0, replaceExisting: boolean = false) => {
     const res = await api.post('/datasets/import', {
       filename: filePath,
       column_mapping: mapping,
       max_rows: maxRows,
       offset_rows: offsetRows,
+      replace_existing: replaceExisting,
     });
     return res.data;
   },

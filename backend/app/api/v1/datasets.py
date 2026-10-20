@@ -129,7 +129,8 @@ def import_dataset(req: DatasetImportRequest, db: Session = Depends(get_db)):
             file_path=target_path,
             mapping=req.column_mapping,
             max_rows=req.max_rows,
-            offset_rows=req.offset_rows or 0
+            offset_rows=req.offset_rows or 0,
+            replace_existing=req.replace_existing or False
         )
 
         return DatasetImportResponse(

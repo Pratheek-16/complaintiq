@@ -63,10 +63,15 @@ export const ModelLab: React.FC = () => {
         min_df: 1,
         stratify: true,
       });
-      setSuccessMessage(
-        `Successfully trained and evaluated ${results.length} model pipeline(s) on held-out test split!`
-      );
-      fetchComparison();
+      // Automatically activate the best model by Macro-F1
+      if (results.length > 0) {
+        const best = results.reduce((prev, curr) => (curr.macro_f1 > prev.macro_f1 ? curr : prev), results[0]);
+        await apiClient.activateModel(best.model_version);
+        setSuccessMessage(
+          `Successfully trained ${results.length} model(s)! Automatically activated top-performing model: ${best.model_name.replace('_', ' ').toUpperCase()} (${(best.macro_f1 * 100).toFixed(1)}% Macro-F1) for live inference.`
+        );
+      }
+      await fetchComparison();
     } catch (err: any) {
       setError(err?.response?.data?.detail || err?.message || 'Model training failed.');
     } finally {

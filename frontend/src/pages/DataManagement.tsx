@@ -28,10 +28,35 @@ export const DataManagement: React.FC = () => {
   const [validationReport, setValidationReport] = useState<ValidationReport | null>(null);
   const [importHistory, setImportHistory] = useState<any[]>([]);
   const [maxRows, setMaxRows] = useState<number>(5000);
+  const [replaceExisting, setReplaceExisting] = useState<boolean>(true);
   const [loading, setLoading] = useState(false);
   const [validating, setValidating] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploading(true);
+      setMessage(null);
+      const res = await apiClient.uploadDataset(file);
+      setMessage({ type: 'success', text: `Uploaded ${file.name} successfully!` });
+      await loadFiles();
+      if (res.preview) {
+        setSelectedFile(res.preview.filename);
+        setPreviewData(res.preview);
+        if (res.preview.suggested_mapping) {
+          setColumnMapping(res.preview.suggested_mapping);
+        }
+      }
+    } catch (err: any) {
+      setMessage({ type: 'error', text: err?.response?.data?.detail || err?.message || 'File upload failed.' });
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const loadFiles = async () => {
     try {
@@ -103,8 +128,11 @@ export const DataManagement: React.FC = () => {
     try {
       setImporting(true);
       setMessage(null);
-      const res = await apiClient.importDataset(selectedFile, columnMapping, maxRows);
-      setMessage({ type: 'success', text: res.message });
+      const res = await apiClient.importDataset(selectedFile, columnMapping, maxRows, 0, replaceExisting);
+      setMessage({
+        type: 'success',
+        text: `${res.message} Now go to 'Model Laboratory' in the left menu to train classifiers on this new data!`,
+      });
       const imports = await apiClient.getImports();
       setImportHistory(imports);
     } catch (err: any) {
@@ -131,9 +159,27 @@ export const DataManagement: React.FC = () => {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column: File Selector */}
+        {/* Left Column: File Selector & Upload */}
         <div className="space-y-6">
+          {/* Upload Custom CSV */}
+          <Card title="Upload Custom CSV" subtitle="Add any customer complaint or review file">
+            <label className="flex flex-col items-center justify-center p-4 border-2 border-dashed border-slate-300 hover:border-sky-500 rounded-xl cursor-pointer bg-slate-50/60 hover:bg-sky-50/30 transition-all text-center">
+              <Upload className="w-6 h-6 text-slate-400 mb-1" />
+              <span className="text-xs font-semibold text-slate-700">Choose CSV from your computer</span>
+              <span className="text-[10px] text-slate-400 mt-0.5">Supports UTF-8 CSV datasets</span>
+              <input
+                type="file"
+                accept=".csv"
+                onChange={handleFileUpload}
+                disabled={uploading}
+                className="hidden"
+              />
+            </label>
+            {uploading && <p className="text-[11px] text-sky-600 font-medium text-center mt-2">Uploading and inspecting CSV...</p>}
+          </Card>
+
           <Card title="Available Datasets" subtitle="Detected in project root and data directory">
+
             <div className="space-y-2">
               {availableFiles.map((f) => (
                 <div
@@ -182,6 +228,21 @@ export const DataManagement: React.FC = () => {
                 </select>
                 <p className="text-[11px] text-slate-400 mt-1">
                   Protects database memory and ensures rapid response times for local dev.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <label className="flex items-start gap-2 cursor-pointer text-xs font-semibold text-slate-800">
+                  <input
+                    type="checkbox"
+                    checked={replaceExisting}
+                    onChange={(e) => setReplaceExisting(e.target.checked)}
+                    className="rounded text-sky-600 focus:ring-sky-500 mt-0.5"
+                  />
+                  <span>Reset / Replace database with this dataset</span>
+                </label>
+                <p className="text-[11px] text-slate-500 pl-5 mt-0.5">
+                  Clears previous data so all dashboards, charts, themes, and models adapt purely to this new dataset.
                 </p>
               </div>
 
