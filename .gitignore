@@ -1,0 +1,43 @@
+# Large data files
+complaints.csv
+*.zip
+*.tar.gz
+*.jsonl
+*.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database
+*.sqlite3
+*.db
+backend/data/*.db
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.npm
+*.tsbuildinfo
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Model artifacts (keep models/ dir but ignore heavy temporary files)
+backend/models_storage/*.joblib
+backend/models_storage/*.pkl
