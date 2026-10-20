@@ -79,9 +79,6 @@ export const Sidebar: React.FC = () => {
             System Ready
           </span>
         </div>
-        <p className="text-[11px] leading-relaxed text-slate-400">
-          B.Tech CSE Data Science Project
-        </p>
       </div>
     </aside>
   );
